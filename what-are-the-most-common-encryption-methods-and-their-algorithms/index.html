@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en-US"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><!-- This site is optimized with the Yoast SEO plugin v18.5.1  --><title>What are the Most Common Encryption Methods and Their Algorithms? - CTemplar</title><!-- / Yoast SEO plugin. --><link rel='dns-prefetch' href='//s.w.org' /><link rel='stylesheet' id='wp-block-library-css'  href='https://ctemplar.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' /><link rel="canonical" href="https://liverado.com/what-are-the-most-common-encryption-methods-and-their-algorithms/" /><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><link rel='stylesheet' id='ctemplar-bootstrap-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/css/bootstrap.min.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-style-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/style.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-all-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/fontawesome/css/all.min.css' type='text/css' media='all' /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-32x32.png" sizes="32x32" /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-192x192.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-180x180.png" /><meta name="msapplication-TileImage" content="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-270x270.png" />    </head>    <body class="post-template-default single single-post postid-1519 single-format-standard">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <header>            <nav class="bg-primary fixed-top navbar navbar-dark navbar-expand-md">                <div class="container">                    <a class="navbar-brand" href="/"><img src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo-plus-text.svg" alt="CTemplar's logo" height="40"/></a>                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#drop-nav" aria-controls="drop-nav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-icon"></span>                    </button>                    <div class="collapse navbar-collapse" id="drop-nav">                        <ul class="ml-auto navbar-nav">                            <li class="nav-item">                                <a class="nav-link" href="/about/">About</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/blog/">Blog</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/features/">Features</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/help/">Help</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/pricing/">Pricing</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </header>        <main>                                                                    <div class="container my-5" style="max-width: 1024px;">                        <h1 class="mb-5 text-center">What are the Most Common Encryption Methods and Their Algorithms?</h1>                        <!-- wp:paragraph -->
+<p>Today we live in a time when cybercrime is rampant and if you don’t protect our private information, you leave it exposed to criminals and other bad actors. Fortunately, you can use encryption to secure your data from them and get a little peace of mind when exchanging important information online.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>With that in mind, we are going to look over the two encryption methods in this article, explain what they are, how each works, their pros and cons, as well as the different encryption algorithms of both.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, before we dive into explaining the encryption methods, we should first explain what is encryption in the first place.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What is Encryption and Why do We Need it?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>When you hear the word “encryption” you might think about modern computers, but encryption has been around since ancient times.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But what is encryption?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p><a href="https://us.norton.com/internetsecurity-privacy-what-is-encryption.html" target="_blank" rel="noreferrer noopener nofollow">Norton</a> defines encryption as “<em>the process of taking plain text, like a text message or email and scrambling it into an unreadable format - called ‘cipher text’.”</em></p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Such a message can only be read by the intended recipient if they possess the “secret” key that allows them to decrypt the message. Otherwise, the data should be scrambled and unreadable.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So why do we need encryption?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Today data is a very valuable commodity and&nbsp; data theft is a very real threat every time you are online. Because of this, you need a way to protect your data against hackers, but also against the government. That is where encryption comes in to protect your personally identifiable information (PII) and other sensitive personal and business data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What encryption methods are there?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There are two main encryption methods in use today - symmetric and asymmetric encryption. All different types and encryption algorithms are based on them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let’s take a closer look at both of these encryption methods.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Symmetric Encryption</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Symmetric, or secret key algorithm, is an encryption method which uses a single key to encrypt and decrypt a message.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>How does symmetric encryption work?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>First, a sender uses a public encryption key to encrypt the message from plaintext to ciphertext.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once the data is encrypted, the other side can only read it using an encryption key which allows them to turn the data back into its original form.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What are the pros and cons of symmetric encryption?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Pros:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>It is fast to both encrypt and decrypt a message</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>Cons:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>For each new exchange and participant, a new key has to be generated</li><li>Exchanging keys is not secure and must be done by secure channels (often in person)</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>As for the different algorithms used in symmetric encryption, they can be classified into two categories:&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Block algorithms </strong>encrypt the data block-by-block, with each block consisting of a set of bits that are encrypted using a public key.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The main problem with this type of algorithm is in the fact that data is kept in the memory of the encryption system as it waits for data blocks to be completed. This can obviously compromise data security and integrity.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Stream algorithms </strong>encrypt data not by blocks, but rather byte by byte (or even bit by bit). This means that data is not kept in the system memory without encryption like with block algorithms and is, therefore, a safer way.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The two most block common symmetric encryption algorithms are:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><strong>DES (Data Encryption Standard)</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>DES is a block-type symmetric encryption that uses 64-bit size blocks. However, DES can only have 56-bit long keys, as 8 bits are check bits.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This algorithm was developed by IBM in the 1970s and is based on the LUCIFER block cipher developed by Horst Feistel in 1971 and was the main data encryption standard for about 20 years until the appearance of AES.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Today DES is largely deprecated and is considered weak and easily broken by modern computers, although a version of it, called 3DES (Triple Data Encryption Standard) is often used in EMV chip cards.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":2} -->
+<ol start="2"><li><strong>AES (Advanced Encryption Standard) </strong>replaced DES at the beginning of the 21st century and is today the de-facto data encryption standard, at least when it comes to symmetric encryption methods.</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>For example, where a 56-bit DES key can be deciphered in 6 minutes or 360 seconds by a modern computer, a 128-bit AES key would take around 36 quadrillion years.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Instead of the Feistel cipher, AES uses a substitution-permutation network and operates with 128-bit (16bytes) blocks and uses 128, 192 and 256-bit keys.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>AES is used in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>Wireless networks along with WPA2</li><li>Virtual Private Networks (VPN)</li><li>Archive and compression tools like RAR and WinZip</li><li>Password managers like LastPass</li><li>Operating systems (OS), specifically in file systems</li><li>Mobile apps like Snapchat</li><li>Programming language libraries like Java and Python</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>When it comes to the stream key algorithms, the most widely used one is CHACHA20, which is also used internally by Google.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Asymmetric Encryption</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Unlike symmetric encryption that uses public key encryption, asymmetric, or public key encryption uses a pair of keys to encrypt and decrypt a message.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This solves the problem of exchanging the secret key in a secure way that symmetric encryption suffers from the most, but introduces a new one. Asymmetric encryption as a result of using two keys, public and private, is slower.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>How does the public key encryption work?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let’s say that person A wants to send a secret message to person B. To prevent a third party (like a hacker) from reading the message, they first need to turn plaintext into ciphertext using public key encryption.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, in order to read the original message and turn the ciphertext back into plaintext, the recipient needs to use the private key. The intended recipient should be the only one in possession of the private key.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So what are the pros and cons of asymmetric encryption?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Pros:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>The recipient is able to verify that the message came from the sender</li><li>It allows the recipient to detect if the message was altered in any way during transit and is in its original form</li><li>The sender cannot deny that they sent the message, as the message acts like a physically signed document</li><li>The key distribution is more secure and convenient. Anyone can own and publish public keys, but the private key is kept secret and in the possession of the intended recipient</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>Cons:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>It’s much slower than using a single key symmetric encryption method and this makes it unsuitable for larger and bulk messages</li><li>If the private key is lost, the recipient will become unable to read/decrypt the message</li><li>Public keys are not authenticated and it can be a problem to verify that they belong to the sender</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Asymmetric encryption algorithms:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>RSA</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The most common asymmetric encryption algorithm is Rivest Shamir Adleman, or RSA.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This public key algorithm was developed in 1978 and can be used for both encrypting data and signing it digitally through a series of modular multiplications.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Since RSA uses 1024-bit and 2048-bit key length, it provides an excellent level of security, however the length of the key means that the decryption algorithm is slower than with shorter keys.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>ECC</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>In addition to RSA, we also have the Elliptic Curve Cryptography, or ECC. This algorithm method was originated by Neal Koblitz and Victor S. Miller in 1985 and was implemented in 2004.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The ECC uses a mathematical operation based on the Elliptic-curve Diffie-Hellman. Because of this the mathematical operation in ECC is easy to complete, but almost impossible to reverse, which means it’s not possible to reveal the private key.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>ECC is also considered a future of encryption. For instance, a 164-bit ECC key matches the security of a 1024-bit RSA key.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Conclusion</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This was an overview of the two encryption methods and their different types of algorithms. As we live in an age of data, encryption and cryptography should no longer be considered the domain of the military and the government, but of anyone whose data might be at any point exposed.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We hope this overview of encryption methods has given you a better perspective of them and why they are important and how they can help protect your data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Speaking of protecting your data, your email is often the first thing hackers will turn to in order to steal it. CTemplar: Armored Email uses 4096-bit encryption on the client-side to keep your email messages, subjects and attachments encrypted and safe.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"backgroundColor":"vivid-green-cyan"} -->
+<p class="has-vivid-green-cyan-background-color has-background"><a href="https://ctemplar.com/pricing/">Sign up</a> to CTemplar to get your encrypted email and protect your privacy.</p>
+<!-- /wp:paragraph -->        </main>        <footer>            <section class="bg-light mt-5 pb-5 pt-5 text-center text-sm-left">                <div class="container">                    <div class="row">                        <div class="col-3 d-md-block d-none text-center">                            <img class="img-fluid" src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo.svg" alt="CTemplar's logo" width="155"/>                        </div>                        <div class="col">                            <h3 class="font-weight-bold">Regain your right to privacy now!</h3>                            <p class="lead">Stand with us in the fight to protect privacy, civil liberties, and the right for anonymity. Create your anonymous encrypted email today.</p>                            <a class="btn btn-danger" href="/pricing/">Pricing</a>                            <a class="btn btn-outline-dark" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                </div>            </section>            <section class="bg-dark pb-3 pt-5 text-light footer">                <div class="container">                    <div class="row text-center">                        <div class="col-12 col-lg-3 col-md-4 col-sm-6 text-sm-left">                            <nav class="flex-column nav">                                <a class="nav-link pl-0 text-light" href="/about/">About</a>                                <a class="nav-link pl-0 text-light" href="/blog/">Blog</a>                                <a class="nav-link pl-0 text-light" href="/donate/">Donate</a>                            <a class="nav-link pl-0 text-light" href="/security/">Security</a>                            </nav>                        </div>                        <div class="col-12 col-lg-3 col-md-4 mt-5 mt-md-0 text-md-left">                                <a class="nav-link pl-0 text-light" href="/features/">Features</a>                                <a class="nav-link pl-0 text-light" href="/help/">Helpdesk</a>                                <a class="nav-link pl-0 text-light" href="/media-kit/">Media Kit</a>                        </div>                        <div class="col-12 col-lg-2 ml-auto mt-4 mt-lg-0 text-lg-left">                            <a class="nav-link pl-0 text-light" href="/privacy/">Privacy Policy</a>                            <a class="nav-link pl-0 text-light" href="/terms/">Terms &amp; Conditions</a>                            <a class="nav-link pl-0 text-light" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                    <h4 class="lead mt-5 text-center">Made with <i class="fa-heart fa-w-16 fas text-danger"></i> for Human Rights</h4>                    <hr>                    <div class="text-center">                        <small>&copy;2022 Templar Software Systems Ltd., a Seychelles Limited Liability Company.</small>                    </div>                </div>            </section>        </footer>        <script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/jquery.slim.min.js' id='ctemplar-jqueryslim-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/popper.min.js' id='ctemplar-popper-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/js/bootstrap.min.js' id='ctemplar-bootstrap-js'></script>        <script>            $(function () {                $('[data-toggle="popover"]').popover()            })        </script>    </body></html>

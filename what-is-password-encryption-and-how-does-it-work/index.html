@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en-US"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><!-- This site is optimized with the Yoast SEO plugin v18.5.1  --><title>What is Password Encryption and How Does it Work? - CTemplar</title><!-- / Yoast SEO plugin. --><link rel='dns-prefetch' href='//s.w.org' /><link rel='stylesheet' id='wp-block-library-css'  href='https://ctemplar.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' /><link rel="canonical" href="https://liverado.com/what-is-password-encryption-and-how-does-it-work/" /><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><link rel='stylesheet' id='ctemplar-bootstrap-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/css/bootstrap.min.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-style-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/style.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-all-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/fontawesome/css/all.min.css' type='text/css' media='all' /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-32x32.png" sizes="32x32" /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-192x192.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-180x180.png" /><meta name="msapplication-TileImage" content="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-270x270.png" />    </head>    <body class="post-template-default single single-post postid-1519 single-format-standard">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <header>            <nav class="bg-primary fixed-top navbar navbar-dark navbar-expand-md">                <div class="container">                    <a class="navbar-brand" href="/"><img src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo-plus-text.svg" alt="CTemplar's logo" height="40"/></a>                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#drop-nav" aria-controls="drop-nav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-icon"></span>                    </button>                    <div class="collapse navbar-collapse" id="drop-nav">                        <ul class="ml-auto navbar-nav">                            <li class="nav-item">                                <a class="nav-link" href="/about/">About</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/blog/">Blog</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/features/">Features</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/help/">Help</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/pricing/">Pricing</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </header>        <main>                                                                    <div class="container my-5" style="max-width: 1024px;">                        <h1 class="mb-5 text-center">What is Password Encryption and How Does it Work?</h1>                        <!-- wp:paragraph -->
+<p>Okay, so you have some documents, files or other data that you want to protect. How do you do that?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The standard way is to put a password on it so that only the people who know the password can open the data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Unfortunately, a password alone is not nearly enough to keep your data safe from determined hackers, or just someone who can guess the password. So we need to go a step ahead and introduce encryption to the password.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So what is <strong>password encryption</strong>, how does it work and how will encrypting your password help make it more secure?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let's find out in this article.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What is Password Encryption? Symmetric and Public Key Encryption Explained</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The term "password encryption" is a bit misleading as you don't encrypt the password itself but the contents of the file or document that the password is supposed to protect.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Here it's important to understand what encryption is in the first place.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Encryption is a 2-way process in which, on one hand, the data is converted from plaintext into a "ciphertext" using an encryption key and on the other, it is converted back into plaintext by using a decryption key.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Encryption can either be <strong>asymmetric </strong>or <strong>symmetric.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The difference between the two is that asymmetric encryption uses two keys - public and private. This is also sometimes called <strong>public key encryption.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>With asymmetric or public key encryption, data is first encrypted using the public key and then decrypted using the private key. The public key is available to anyone, while only the recipient will have the private key, which makes this type of encryption a lot safer.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>On the other hand, symmetric encryption only uses one key to both encrypt and decrypt data. This key needs to be shared between the sender and the recipient and therein lies its biggest flaw. While this method is undoubtedly faster than asymmetric encryption, the risk is that a 3rd party could always intercept the key and be able to read the document freely.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another big (we can even say "key") difference between the two is the length of keys that each encryption type uses.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Symmetric encryption uses shorter keys, usually 128-bit or 256-bit, while asymmetric encryption uses much longer keys, 2048-bits or more. This makes symmetric encryption faster, but on the other hand, the longer key means that public key encryption is more secure.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What About a Hash and Salt in Passwords?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>You might also have heard the term "hashed &amp; salted" in relation to encryption. Where people often make a mistake is that they tend to see the two as synonymous, but they're not. There are a few key differences here:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li>Hashing is a one-way process, encryption two-way</li><li>Hashing verifies the integrity of the file, encryption verifies the authority of the person accessing the data</li><li>Hashing is strict-length, encryption variable</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>What hashing essentially does is converts input data into an output hash. In other words, a hash algorithm will take a block of data and transform it into shorter values of fixed length.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You can read more about hashing and how it works in <a href="https://ctemplar.com/hashing-algorithm/" rel="noreferrer noopener" target="_blank">this article</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Right now, let's find out if using a hash algorithm on passwords can make them even more secure.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Consider the following scenario:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You have some data and you want to allow only people with "login" privileges to see it, meaning they need to enter a username and a password. However, for the system to "verify" that they entered the correct password, it needs to store something.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Unfortunately, with typical databases like SQL, this will often be stored as a "cleartext" of the password itself. This means that, if an attacker manages to gain access to the database, they will be able to read the stored cleartext passwords. This is how most <a href="https://www.upguard.com/blog/biggest-data-breaches" target="_blank" rel="noreferrer noopener nofollow">data breaches</a> happen in the first place.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But if, instead, said data, or here passwords, is protected using a hash algorithm, then the likelihood of a hacker doing anything with the password even if they can access it is much lower.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What is the Difference Between Password Encryption and Password Protection?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Is password encryption the same as password protection?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Not really and we'll explain the differences between the two next.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Think of password protection as locking something in a box. In this case, the password serves as the key to the lock and only someone with the key can open it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is your standard way to protect online accounts, computers, phones, etc. However, often the attacker or hacker can either find out what the password is or brute force it, or find some other way inside, without even using the password (for instance, the lock-box could have a weak bottom side).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So password protection, while useful and necessary, is just a "surface-level" protection and alone, in this day and age when attackers use more sophisticated methods to attack protected files, it's not enough.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is why you need to consider taking the next step and that means password encryption. Now, as we already mentioned, it's not the password itself that is encrypted here, but rather the contents of whatever the password is meant to protect.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In other words, if an attacker penetrates the password and can open the password-protected data, they are free to read it normally if it doesn't also have password encryption on top of the regular password protection.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>MD5 and SHA Hash Algorithms? Which are More Secure for Passwords?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Speaking of hash algorithms, the two most commonly used for passwords are <strong>MD5 password encryption</strong> and <strong>SHA.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let's go ahead and explain these two a bit closer.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>MD5 or Message-Digest 5 is a hash function whose purpose is to verify that data has not been changed in any way.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Normally, this could be done by comparing the raw data, but that might not be very secure in certain circumstances. Instead, MD5 creates a checksum for both sets of data and then compares the checksums themselves to see if they're the same.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The main issue with MD5 is that it's not very secure and can be broken relatively easily by skilled attackers.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Instead, when considering a hashing function for passwords, the better choice is SHA. SHA is really a modified and improved version of MD5 that is more suitable for hashing data and certificates and is really the data encryption standard today.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>With SHA, for instance, if just one character in the message changes (even from upper-case to lower-case), the entire hash value will change as a result. This is called "the avalanche effect".</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The benefit here is that the system doesn't have to remember passwords themselves, but rather the hash, so if hackers manage to breach the database, passwords will be protected nevertheless.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What are the Best Password Encryption Tools?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Okay, but how can we encrypt passwords in the first place if we don't have any encrypting know-how?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Luckily, there are several very good and often free password encryption tools.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We'll mention just a few of them:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><strong>LastPass</strong></li><li><strong>RemeBear</strong></li><li><strong>1Password</strong></li><li><strong>NordPass</strong></li><li><strong>RoboForm</strong></li><li><strong>Enpass</strong></li><li><strong>Bitwarden</strong></li><li><strong>Keeper</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>These tools are not only useful for managing and generating passwords, but also for encryption and making them more difficult to crack once they are stored.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>CTemplar hashes your passwords before sending them to the server for authentication and sign-up. The salt is created using the unique user's username and this is then used to hash the password using bcrypt.js password-hashing function, which is also the default password hash algorithm for certain <a href="https://ctemplar.com/what-is-the-best-linux-distro-for-privacy-and-security/" rel="noreferrer noopener" target="_blank">Linux distribution systems</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This means that CTemplar takes your security and privacy very seriously. If you want to regain your privacy, <a href="https://ctemplar.com/pricing/" rel="noreferrer noopener" target="_blank">join CTemplar today</a>.</p>
+<!-- /wp:paragraph -->        </main>        <footer>            <section class="bg-light mt-5 pb-5 pt-5 text-center text-sm-left">                <div class="container">                    <div class="row">                        <div class="col-3 d-md-block d-none text-center">                            <img class="img-fluid" src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo.svg" alt="CTemplar's logo" width="155"/>                        </div>                        <div class="col">                            <h3 class="font-weight-bold">Regain your right to privacy now!</h3>                            <p class="lead">Stand with us in the fight to protect privacy, civil liberties, and the right for anonymity. Create your anonymous encrypted email today.</p>                            <a class="btn btn-danger" href="/pricing/">Pricing</a>                            <a class="btn btn-outline-dark" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                </div>            </section>            <section class="bg-dark pb-3 pt-5 text-light footer">                <div class="container">                    <div class="row text-center">                        <div class="col-12 col-lg-3 col-md-4 col-sm-6 text-sm-left">                            <nav class="flex-column nav">                                <a class="nav-link pl-0 text-light" href="/about/">About</a>                                <a class="nav-link pl-0 text-light" href="/blog/">Blog</a>                                <a class="nav-link pl-0 text-light" href="/donate/">Donate</a>                            <a class="nav-link pl-0 text-light" href="/security/">Security</a>                            </nav>                        </div>                        <div class="col-12 col-lg-3 col-md-4 mt-5 mt-md-0 text-md-left">                                <a class="nav-link pl-0 text-light" href="/features/">Features</a>                                <a class="nav-link pl-0 text-light" href="/help/">Helpdesk</a>                                <a class="nav-link pl-0 text-light" href="/media-kit/">Media Kit</a>                        </div>                        <div class="col-12 col-lg-2 ml-auto mt-4 mt-lg-0 text-lg-left">                            <a class="nav-link pl-0 text-light" href="/privacy/">Privacy Policy</a>                            <a class="nav-link pl-0 text-light" href="/terms/">Terms &amp; Conditions</a>                            <a class="nav-link pl-0 text-light" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                    <h4 class="lead mt-5 text-center">Made with <i class="fa-heart fa-w-16 fas text-danger"></i> for Human Rights</h4>                    <hr>                    <div class="text-center">                        <small>&copy;2022 Templar Software Systems Ltd., a Seychelles Limited Liability Company.</small>                    </div>                </div>            </section>        </footer>        <script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/jquery.slim.min.js' id='ctemplar-jqueryslim-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/popper.min.js' id='ctemplar-popper-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/js/bootstrap.min.js' id='ctemplar-bootstrap-js'></script>        <script>            $(function () {                $('[data-toggle="popover"]').popover()            })        </script>    </body></html>

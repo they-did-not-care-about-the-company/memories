@@ -1,322 +1,195 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-
-	<!-- This site is optimized with the Yoast SEO plugin v18.5.1 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Is Your Session Hijacked? How to Prevent Session Hijacking? - CTemplar</title>
-	<meta name="description" content="Session hijacking, aka cookie-side jacking/hijacking takes advantage of the vulnerabilities in the HTTP protocol." />
-	<link rel="canonical" href="https://liverado.com/blog/what-is-session-hijacking-and-how-to-prevent-it" />
-	<!-- / Yoast SEO plugin. -->
-
-
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel='stylesheet' id='wp-block-library-css'  href='https://ctemplar.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' />
-<style id='global-styles-inline-css' type='text/css'>
-body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-</style>
-<link rel='stylesheet' id='ctemplar-bootstrap-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />
-<link rel='stylesheet' id='ctemplar-style-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='ctemplar-all-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/fontawesome/css/all.min.css' type='text/css' media='all' />
-<link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-32x32.png" sizes="32x32" />
-<link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-180x180.png" />
-<meta name="msapplication-TileImage" content="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-270x270.png" />
-    </head>
-    <body class="post-template-default single single-post postid-759 single-format-standard">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <header>
-            <nav class="bg-primary fixed-top navbar navbar-dark navbar-expand-md">
-                <div class="container">
-                    <a class="navbar-brand" href="/"><img src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo-plus-text.svg" alt="CTemplar's logo" height="40"/></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#drop-nav" aria-controls="drop-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="drop-nav">
-                        <ul class="ml-auto navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/about/">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/blog/">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/features/">Features</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/help/">Help</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/pricing/">Pricing</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <main>
-
-                                                                    <div class="container my-5" style="max-width: 1024px;">
-                        <h1 class="mb-5 text-center">Is Your Session Hijacked? How to Prevent Session Hijacking?</h1>
-                        <img src="https://ctemplar.com/wp-content/uploads/2020/09/Is-Your-Session-Hijacked-1024x683.jpg" class="img-fluid mb-5 wp-post-image" alt="Is Your Session Hijacked" sizes="max-width(1024px) 97vw, max-width(1280px) 994px, 994px" srcset="https://ctemplar.com/wp-content/uploads/2020/09/Is-Your-Session-Hijacked-1024x683.jpg 1024w, https://ctemplar.com/wp-content/uploads/2020/09/Is-Your-Session-Hijacked-300x200.jpg 300w, https://ctemplar.com/wp-content/uploads/2020/09/Is-Your-Session-Hijacked-768x512.jpg 768w, https://ctemplar.com/wp-content/uploads/2020/09/Is-Your-Session-Hijacked-355x237.jpg 355w, https://ctemplar.com/wp-content/uploads/2020/09/Is-Your-Session-Hijacked.jpg 1200w" />                        <div>
-                            <div>
-</div>
-                        </div>
-                        <div style="font-size: 1.2rem;">
-                            
+<!DOCTYPE html><html lang="en-US"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><!-- This site is optimized with the Yoast SEO plugin v18.5.1  --><title>Is Your Session Hijacked? How to Prevent Session Hijacking? - CTemplar</title><!-- / Yoast SEO plugin. --><link rel='dns-prefetch' href='//s.w.org' /><link rel='stylesheet' id='wp-block-library-css'  href='https://ctemplar.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' /><link rel="canonical" href="https://liverado.com/is-your-session-hijacked-how-to-prevent-session-hijacking/" /><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><link rel='stylesheet' id='ctemplar-bootstrap-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/css/bootstrap.min.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-style-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/style.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-all-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/fontawesome/css/all.min.css' type='text/css' media='all' /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-32x32.png" sizes="32x32" /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-192x192.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-180x180.png" /><meta name="msapplication-TileImage" content="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-270x270.png" />    </head>    <body class="post-template-default single single-post postid-1519 single-format-standard">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <header>            <nav class="bg-primary fixed-top navbar navbar-dark navbar-expand-md">                <div class="container">                    <a class="navbar-brand" href="/"><img src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo-plus-text.svg" alt="CTemplar's logo" height="40"/></a>                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#drop-nav" aria-controls="drop-nav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-icon"></span>                    </button>                    <div class="collapse navbar-collapse" id="drop-nav">                        <ul class="ml-auto navbar-nav">                            <li class="nav-item">                                <a class="nav-link" href="/about/">About</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/blog/">Blog</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/features/">Features</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/help/">Help</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/pricing/">Pricing</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </header>        <main>                                                                    <div class="container my-5" style="max-width: 1024px;">                        <h1 class="mb-5 text-center">Is Your Session Hijacked? How to Prevent Session Hijacking?</h1>                        <!-- wp:paragraph -->
 <p>Every time you log in or access a website or server on the network you initiate what is called a “session”. Sessions represent a connection between the user’s computer or other device and a server and are what makes the exchange of information and data between two computers on the network possible.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>Most websites use cookies. These are temporary files in your web browser that allow the website to remember that you are logged in and authenticated. However, just like real-life cookies, someone can snatch them away from you.&nbsp;</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>This is called session hijacking, or cookie-side jacking. This is different from TCP session hijacking as HTTP is an application-level protocol, whereas TCP is a network-level protocol.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:heading -->
 <h2>What is Session Hijacking and How Does it Work?</h2>
+<!-- /wp:heading -->
 
-
-
+<!-- wp:paragraph -->
 <p>A session hijacking attack comes in different forms (more on that later), but in general, it takes advantage of poor session management to steal away cookies. With these cookies, a hacker can then fool the server into believing that they are an authenticated user.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>This means that a hacker can do pretty much anything that an authorized user could and can:</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list -->
 <ul><li>Access the real user’s personal information (identity theft).</li><li>Encrypt valuable user’s data and demand ransom.</li><li>Steal money from the user’s bank account.</li><li>Buy stuff from the web store.</li><li>And more.</li></ul>
+<!-- /wp:list -->
 
-
-
+<!-- wp:heading -->
 <h2>What are the Main Session Hijacking Methods?</h2>
+<!-- /wp:heading -->
 
-
-
+<!-- wp:paragraph -->
 <p>Session hijacking attack can take different forms depending on the attacker’s position or attack vector. We can first differentiate between two major types of session hijacking:</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list -->
 <ul><li><strong>Active</strong></li></ul>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>In active session hijacking, the hacker kicks your own device out of the session and completely takes over the session.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list -->
 <ul><li><strong>Passive</strong></li></ul>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>In passive session hijacking, the real user is still logged into a session, while the hacker is spying on the traffic and collecting sensitive information such as your passwords.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>Now let’s look at the main session hijacking methods hackers use:</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true} -->
 <ol><li><strong>Cross-site scripting (XSS)</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>Cross-site scripting or just XSS is a code-injection attack in which the attacker takes advantage of a website or application vulnerability to inject a malicious code into the user’s computer. Once the user accesses the site, they activate the script and the attacker can hijack their cookies.&nbsp;</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>Websites and applications that are based on JavaScript (JS) are particularly vulnerable to XSS. Unfortunately, JS is required for encryption services and many otherwise legitimate services will use JS to inject code into your device.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p><a href="https://ctemplar.com/ctemplar-checksum-implementation/">CTemplar protects its users from harmful JS injection by using checksums</a>, which allows users to compare the code in their browser with the code in Github in just 15 to 30 seconds (this would normally take valuable hours or even days without checksums).</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true,"start":2} -->
 <ol start="2"><li><strong>Session fixation</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>Another method a hacker can use to steal the user’s cookie is to provide a session key they already know. This can be done in a few ways;</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list -->
 <ul><li>The hacker can send a login form with a hidden fixed session ID for the user to fill out.</li><li>They can send an email link with an&nbsp; HTTP query parameter so when the user clicks on the link, using the session key provided by the attacker, the latter can hijack their session.</li><li>Also, the hacker can manipulate the HTTP header values and insert a known session key with the <em>Set-Cookie </em>parameter (this method requires that the attacker also has access to the user’s network traffic).</li></ul>
+<!-- /wp:list -->
 
-
-
+<!-- wp:list {"ordered":true,"start":3} -->
 <ol start="3"><li><strong>Session-side jacking</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>Session-side jacking employs packet sniffers which allow the hacker to monitor user’s traffic and intercept session cookies as they (user) authenticate themselves on the server. For websites that only use <a href="https://ctemplar.com/what-is-tls-encryption-and-how-it-makes-your-email-more-secure/">TLS/SSL encryption</a> for login (but not the rest of the session), an attacker can “allow” the user to login and then, using the sniffer, hijack an already logged in session and impersonate the user.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true,"start":4} -->
 <ol start="4"><li><strong>Using malware to hijack cookies</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>One way for hackers to steal session cookies is to install a malicious software or malware on the user’s device. This is usually done using an email link that leads the user to a malicious website. Once the malware is installed on the user’s machine, the malware will automatically scan their network for session cookies and send them to the attacker.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:heading -->
 <h2>How to Prevent Session Hijacking?</h2>
+<!-- /wp:heading -->
 
-
-
+<!-- wp:paragraph -->
 <p>Session hijacking, aka cookie-side jacking/hijacking takes advantage of the vulnerabilities in the HTTP protocol. HTTP is stateless, which means it requires session cookies to allow a website or application to identify the user’s device and store their current session.&nbsp;</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>As you can see, this poses several security risks.&nbsp;</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>So what can be done to prevent session hijacking?</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>First, here are some methods on the user or client side:</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true} -->
 <ol><li><strong>Don’t click or open unknown links in your email.</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>These links can contain malware or lead the user to an infected website and are often used in email phishing.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true,"start":2} -->
 <ol start="2"><li><strong>Don’t use public WiFi.</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>Avoid using public WiFi hotspots like cafes, public parks, airports and similar when you have to log in to your bank account as they typically have poor security and can be hacked easily.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true,"start":3} -->
 <ol start="3"><li><strong>Stay away from unsecured websites.</strong></li></ol>
+<!-- /wp:list -->
 
+<!-- wp:image {"align":"center","id":760,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2020/09/pasted-image-0-37.png" alt="usage of default protocol" class="wp-image-760"/><figcaption><em>Img src: https://w3techs.com/technologies/details/ce-httpsdefault</em></figcaption></figure></div>
+<!-- /wp:image -->
 
-
-<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="600" height="400" src="https://ctemplar.com/wp-content/uploads/2020/09/pasted-image-0-37.png" alt="usage of default protocol" class="wp-image-760" srcset="https://ctemplar.com/wp-content/uploads/2020/09/pasted-image-0-37.png 600w, https://ctemplar.com/wp-content/uploads/2020/09/pasted-image-0-37-300x200.png 300w, https://ctemplar.com/wp-content/uploads/2020/09/pasted-image-0-37-355x237.png 355w" sizes="(max-width: 600px) 100vw, 600px" /><figcaption><em>Img src: https://w3techs.com/technologies/details/ce-httpsdefault</em></figcaption></figure></div>
-
-
-
+<!-- wp:paragraph -->
 <p>Today more than 60% of all websites on the web use HTTPS according to W3Techs Usage statistics of Default protocol https for websites analysis. Just to be clear, an HTTP website isn’t inherently bad, however, it is far less secure than an HTTPS one.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true,"start":4} -->
 <ol start="4"><li><strong>Install anti-malware.</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>Hackers will inevitably try to install malware on your computer and most times you won’t be aware of it, especially if you don’t have an anti-malware program to protect your computer.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>We can also look at some methods to prevent session hijacking on the server-side, or by websites themselves:</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true} -->
 <ol><li><strong>Use HTTPS instead of HTTP.</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>This will allow your website to use TLS/SSL encryption on all your pages and sessions and not just for login and thus stop session-side jacking.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true,"start":2} -->
 <ol start="2"><li><strong>Use web frameworks.</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>Don’t try to invent hot water or, in this case, your own session management. Instead, use web frameworks, which provide tested and secure session ID generation and management.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true,"start":3} -->
 <ol start="3"><li><strong>Regenerate session keys.</strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>After a successful user authentication at login, regenerate the session key right away to avoid session fixation.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:list {"ordered":true,"start":4} -->
 <ol start="4"><li><strong>Set the </strong><strong><em>http0nly </em></strong><strong>attribute</strong><strong><em>.</em></strong></li></ol>
+<!-- /wp:list -->
 
-
-
+<!-- wp:paragraph -->
 <p>To prevent JavaScript injection and Cross-site scripting, set the Http0nly attribute using the <em>Set-Cookie </em>HTTP header. This will block access to cookies from the client-side.</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:paragraph -->
 <p>Worried about the safety of your email data? <a href="https://ctemplar.com/pricing/">Sign up today to CTemplar armored email.</a> CTemplar provides state-of-the-art security for all your email data and provides full anonymity for its users.</p>
-                        </div>
-                    </div>
-                            
-
-        </main>
-        <footer>
-            <section class="bg-light mt-5 pb-5 pt-5 text-center text-sm-left">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3 d-md-block d-none text-center">
-                            <img class="img-fluid" src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo.svg" alt="CTemplar's logo" width="155"/>
-                        </div>
-                        <div class="col">
-                            <h3 class="font-weight-bold">Regain your right to privacy now!</h3>
-                            <p class="lead">Stand with us in the fight to protect privacy, civil liberties, and the right for anonymity. Create your anonymous encrypted email today.</p>
-                            <a class="btn btn-danger" href="/pricing/">Pricing</a>
-                            <a class="btn btn-outline-dark" href="/tor-browser/">Tor Browser</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="bg-dark pb-3 pt-5 text-light footer">
-                <div class="container">
-                    <div class="row text-center">
-                        <div class="col-12 col-lg-3 col-md-4 col-sm-6 text-sm-left">
-                            <nav class="flex-column nav">
-                                <a class="nav-link pl-0 text-light" href="/about/">About</a>
-                                <a class="nav-link pl-0 text-light" href="/blog/">Blog</a>
-                                <a class="nav-link pl-0 text-light" href="/donate/">Donate</a>
-                            <a class="nav-link pl-0 text-light" href="/security/">Security</a>
-                            </nav>
-                        </div>
-                        <div class="col-12 col-lg-3 col-md-4 mt-5 mt-md-0 text-md-left">
-                                <a class="nav-link pl-0 text-light" href="/features/">Features</a>
-                                <a class="nav-link pl-0 text-light" href="/help/">Helpdesk</a>
-                                <a class="nav-link pl-0 text-light" href="/media-kit/">Media Kit</a>
-                        </div>
-                        <div class="col-12 col-lg-2 ml-auto mt-4 mt-lg-0 text-lg-left">
-                            <a class="nav-link pl-0 text-light" href="/privacy/">Privacy Policy</a>
-                            <a class="nav-link pl-0 text-light" href="/terms/">Terms &amp; Conditions</a>
-                            <a class="nav-link pl-0 text-light" href="/tor-browser/">Tor Browser</a>
-                        </div>
-                    </div>
-                    <h4 class="lead mt-5 text-center">Made with <i class="fa-heart fa-w-16 fas text-danger"></i> for Human Rights</h4>
-                    <hr>
-                    <div class="text-center">
-                        <small>&copy;2022 Templar Software Systems Ltd., a Seychelles Limited Liability Company.</small>
-                    </div>
-                </div>
-            </section>
-        </footer>
-        <script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/jquery.slim.min.js' id='ctemplar-jqueryslim-js'></script>
-<script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/popper.min.js' id='ctemplar-popper-js'></script>
-<script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/js/bootstrap.min.js' id='ctemplar-bootstrap-js'></script>
-        <script>
-            $(function () {
-                $('[data-toggle="popover"]').popover()
-            })
-        </script>
-    </body>
-</html>
+<!-- /wp:paragraph -->        </main>        <footer>            <section class="bg-light mt-5 pb-5 pt-5 text-center text-sm-left">                <div class="container">                    <div class="row">                        <div class="col-3 d-md-block d-none text-center">                            <img class="img-fluid" src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo.svg" alt="CTemplar's logo" width="155"/>                        </div>                        <div class="col">                            <h3 class="font-weight-bold">Regain your right to privacy now!</h3>                            <p class="lead">Stand with us in the fight to protect privacy, civil liberties, and the right for anonymity. Create your anonymous encrypted email today.</p>                            <a class="btn btn-danger" href="/pricing/">Pricing</a>                            <a class="btn btn-outline-dark" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                </div>            </section>            <section class="bg-dark pb-3 pt-5 text-light footer">                <div class="container">                    <div class="row text-center">                        <div class="col-12 col-lg-3 col-md-4 col-sm-6 text-sm-left">                            <nav class="flex-column nav">                                <a class="nav-link pl-0 text-light" href="/about/">About</a>                                <a class="nav-link pl-0 text-light" href="/blog/">Blog</a>                                <a class="nav-link pl-0 text-light" href="/donate/">Donate</a>                            <a class="nav-link pl-0 text-light" href="/security/">Security</a>                            </nav>                        </div>                        <div class="col-12 col-lg-3 col-md-4 mt-5 mt-md-0 text-md-left">                                <a class="nav-link pl-0 text-light" href="/features/">Features</a>                                <a class="nav-link pl-0 text-light" href="/help/">Helpdesk</a>                                <a class="nav-link pl-0 text-light" href="/media-kit/">Media Kit</a>                        </div>                        <div class="col-12 col-lg-2 ml-auto mt-4 mt-lg-0 text-lg-left">                            <a class="nav-link pl-0 text-light" href="/privacy/">Privacy Policy</a>                            <a class="nav-link pl-0 text-light" href="/terms/">Terms &amp; Conditions</a>                            <a class="nav-link pl-0 text-light" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                    <h4 class="lead mt-5 text-center">Made with <i class="fa-heart fa-w-16 fas text-danger"></i> for Human Rights</h4>                    <hr>                    <div class="text-center">                        <small>&copy;2022 Templar Software Systems Ltd., a Seychelles Limited Liability Company.</small>                    </div>                </div>            </section>        </footer>        <script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/jquery.slim.min.js' id='ctemplar-jqueryslim-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/popper.min.js' id='ctemplar-popper-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/js/bootstrap.min.js' id='ctemplar-bootstrap-js'></script>        <script>            $(function () {                $('[data-toggle="popover"]').popover()            })        </script>    </body></html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en-US"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><!-- This site is optimized with the Yoast SEO plugin v18.5.1  --><title>What is DNS Leak Protection? - CTemplar</title><!-- / Yoast SEO plugin. --><link rel='dns-prefetch' href='//s.w.org' /><link rel='stylesheet' id='wp-block-library-css'  href='https://ctemplar.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' /><link rel="canonical" href="https://liverado.com/what-is-dns-leak-protection/" /><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><link rel='stylesheet' id='ctemplar-bootstrap-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/css/bootstrap.min.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-style-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/style.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-all-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/fontawesome/css/all.min.css' type='text/css' media='all' /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-32x32.png" sizes="32x32" /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-192x192.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-180x180.png" /><meta name="msapplication-TileImage" content="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-270x270.png" />    </head>    <body class="post-template-default single single-post postid-1519 single-format-standard">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <header>            <nav class="bg-primary fixed-top navbar navbar-dark navbar-expand-md">                <div class="container">                    <a class="navbar-brand" href="/"><img src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo-plus-text.svg" alt="CTemplar's logo" height="40"/></a>                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#drop-nav" aria-controls="drop-nav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-icon"></span>                    </button>                    <div class="collapse navbar-collapse" id="drop-nav">                        <ul class="ml-auto navbar-nav">                            <li class="nav-item">                                <a class="nav-link" href="/about/">About</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/blog/">Blog</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/features/">Features</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/help/">Help</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/pricing/">Pricing</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </header>        <main>                                                                    <div class="container my-5" style="max-width: 1024px;">                        <h1 class="mb-5 text-center">What is DNS Leak Protection?</h1>                        <!-- wp:paragraph -->
+<p>Using a Virtual Private Network (VPN) is a good idea when you want to protect your online privacy and have a more secure Internet connection, but even the best VPN won’t matter if it doesn’t protect you from DNS leaks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In this article, we’ll explain:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>What is DNS leak</li><li>How to check for DNS leaks</li><li>What causes DNS leaks</li><li>How to fix DNS leak</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>But first, we need to understand the following:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What is DNS and How it Works?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Domain Name System (DNS) is what allows us to traverse the Internet as we do. This is because DNS is responsible for translating hostnames into IP addresses.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Why is this important?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Well, because of the difference in which humans and computers think.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To us humans, it’s much easier to memorize a website called “Facebook.com” or “Google.com” (we don’t even need to remember the “.com” part).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Computers, however, think differently (binary to say). To them, words like “Facebook” or “Google” doesn't mean anything. Instead, they use numerical IP addresses like 216.58.217.46.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Each device connected on the Internet has its own IP address (sometimes they’ll have a range of IP addresses, but that’s another story). It is through these IPs that devices on the network communicate.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Here’s how DNS works normally:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li>The user (that’s you) searches for a website on their browser. This is called a “request” and your request is sent to a “recursive resolver” operated by your Internet Service Provider (ISP).</li><li>The DNS resolver goes “hold on, I’ll ask someone” and the first server it turns to for an answer is the root server. DNS root servers hold information about Top Level Domains (TLD) like .com. Contrary to popular belief, <a href="https://www.quora.com/What-are-the-13-main-public-root-DNS-servers?ch=99&amp;share=a74fed1f&amp;srid=u9Qe" target="_blank" rel="noreferrer noopener nofollow">there aren’t 13 DNS root servers</a>, but much more (hundreds all over the world). The 13 is just the max number of allowed named authorities in the delegation data for one root zone.</li><li>If the root server has information about the TLD, it will return that info to the resolver, which can then ask the TLD Name Server “hey, where is thiswebsite.com?”, to which the TLD Name Server replies (if it knows) with “here’s the Domain’s Name Server”.</li><li>Finally, the DNS resolver asks the Domain’s Name Server if it can tell it where to find thiswebsite.com? The Domain’s Name Server replies with “here’s its IP address”.</li><li>Finally, the website appears on your screen and you are one happy user since all of this took probably as much time as you needed to blink.</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2>What is DNS Leak?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>At least this is how DNS should work (and normally, it does work like this). However, sometimes <a href="https://ctemplar.com/what-is-a-dns-attack-what-are-the-most-dangerous-dns-attacks-and-how-to-protect-against-them/">DNS gets attacked</a>, or a request that you make to the DNS server becomes visible to others, like your ISP.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is called a DNS leak and you don’t want that to happen.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What this means is that whoever is running the DNS server (usually the ISP), but also someone watching the DNS server, will see the IP addresses and hostnames of the websites that you visit.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For instance, you might be visiting a website about a particular illness and this information could obviously be very interesting to insurance houses, as well as scammers.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is also very dangerous when it comes to <a href="https://ctemplar.com/net-neutrality-and-privacy-the-pros-and-cons-of-net-neutrality/">net neutrality</a>. For example, if the government becomes curious (for whatever reason) about you, they can ask your ISP for your details and the ISP will be obliged to provide them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That is, unless you are using a VPN, which will route your DNS request through a VPN tunnel and to the VPN server and not the ISP’s.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So when the government asks for your data, the ISP can just shrug their shoulders if you’re using a VPN. However, if there’s a DNS leak, the ISP can be like “here are this guy’s details”.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What Causes a DNS Leak?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There are several potential causes of a DNS leak.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>These include:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><strong>Not configuring the network properly</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Let’s say you use different networks to connect to the Internet. When using a VPN, your device first needs to connect to a local network.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A DNS leak can occur if the DHCP automatically assigns a DNS server that is not secure or that belongs to your ISP so that, when you connect to the VPN, the DNS request doesn’t go through the tunnel.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":2} -->
+<ol start="2"><li><strong>Windows features</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>DNS leaks are most common for Windows machines and that’s because of a particular “feature” that Windows 8, 8.1 and 10 have called the “Smart Multi-Homed Name Resolution”.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What this feature is meant to do is make your browsing faster by all available DNS servers. On Windows 10, for example, this means that your device will accept the response from the fastest DNS server, which can lead to DNS leaks as well as <a href="https://ctemplar.com/how-to-prevent-email-spoofing-attacks/">spoofing attacks</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":3} -->
+<ol start="3"><li><strong>VPN not working with IPv6</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>IPv6 was introduced 25 years ago and we are still waiting for it to replace IPv4. Why? Well, we have long run out of unallocated IPv4.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, here we are, still waiting for the IPv6 to take over.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Unfortunately, some VPNs don’t fully support IPv6 yet. This means that if your device sends a request via IPv6, this will bypass your VPN tunnel and leave your data exposed, even though you are using a VPN.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Usually, the VPNs that don’t support IPv6 traffic, like NordVPN, will simply disallow it and send the address value to a local network address fd00::1 when it connects. Since this local network address cannot be routed publicly, there’s no danger of a DNS leak.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":4} -->
+<ol start="4"><li><strong>A transparent proxy</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>A lot of users will use DNS proxies, or 3rd-party servers to redirect their traffic away from the ISP. If the ISP detects this, they might use a transparent proxy to “redirect your redirected” traffic back to their DNS server. This way, the ISP blatantly causes a DNS leak.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>How to Check for DNS Leaks?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The problem with DNS leaks is that you won’t know you have one unless you check for DNS leaks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So how to check for DNS leaks?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>First, you need to know your real IP address. You can quickly find out this piece of information by googling “what is my IP?”</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The easiest way to check for DNS leaks is to go to a website like <a href="https://www.dnsleaktest.com" target="_blank" rel="noreferrer noopener nofollow">dnsleaktest.com</a> or <a href="https://ipleak.net" target="_blank" rel="noreferrer noopener nofollow">ipleak.net</a>. If you are using a VPN and it still shows your real IP, then you have a DNS leak that you need to fix.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>How to Fix DNS Leak?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Okay, say you’ve detected a leakage. Here are a few ways to fix DNS leaks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><strong>Use a VPN that will prevent DNS leakage</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>For instance, we already mentioned the NordVPN DNS leak prevention feature, so look for something similar in your VPN of choice as well.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Also, make sure that the integrity of your VPN connection is not compromised in any way and that your requests go through the VPN tunnel and not the original ISP.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":2} -->
+<ol start="2"><li><strong>Use a secure DNS service</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>While not as good a choice as using a VPN, some secure DNS solutions heavily encrypt DNS traffic and this way prevents DNS leaks. This also helps with filtering and blocking malicious websites.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Again, a VPN is a preferred choice.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":3} -->
+<ol start="3"><li><strong>Clear your DNS cache</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>This isn’t so much a solution to an existing DNS leak, but more a way to prevent your online actions from becoming known to intruders. The idea here is that by clearing (or “flushing”) your DNS cache regularly, you prevent someone from viewing your browsing history.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:yoast/faq-block {"questions":[{"id":"faq-question-1613149291527","question":[{"type":"strong","props":{"children":["What does DNS leak mean?"]}}],"answer":["A DNS leak means that your request to a VPN server doesn’t get passed through a secure VPN tunnel and an encrypted connection, but instead through the ISP DNS and thus becomes visible to outsiders."],"jsonQuestion":"\u003cstrong\u003eWhat does DNS leak mean?\u003c/strong\u003e","jsonAnswer":"A DNS leak means that your request to a VPN server doesn’t get passed through a secure VPN tunnel and an encrypted connection, but instead through the ISP DNS and thus becomes visible to outsiders."},{"id":"faq-question-1613149311104","question":[{"type":"strong","props":{"children":["How to stop DNS leak?"]}}],"answer":["To stop a DNS leak that is already happening, switch from default DHCP settings on your Windows to either a public DNS or a static DNS server like OpenDNS, Cloudflare, or Comodo Secure.",{"type":"br","props":{"children":[]}},"You can change these settings by going to: Network and Sharing Center \u003e Change Adapter Settings \u003e right-click on your network \u003e Properties \u003e Internet Protocol Version 4 (TCPIPv4) \u003e Properties \u003e Use the following DNS server addresses \u003e enter a Preferred or Alternate address of a DNS server you want to use.",{"type":"br","props":{"children":[]}},"However, since there’s no guarantee that the company managing the public service won’t just sell your data (Google, for instance, has its own public DNS), a better option to stop a DNS leak is to use a better VPN, with features that prevent DNS leakage, like NordVPN."],"jsonQuestion":"\u003cstrong\u003eHow to stop DNS leak?\u003c/strong\u003e","jsonAnswer":"To stop a DNS leak that is already happening, switch from default DHCP settings on your Windows to either a public DNS or a static DNS server like OpenDNS, Cloudflare, or Comodo Secure.\u003cbr/\u003eYou can change these settings by going to: Network and Sharing Center \u003e Change Adapter Settings \u003e right-click on your network \u003e Properties \u003e Internet Protocol Version 4 (TCPIPv4) \u003e Properties \u003e Use the following DNS server addresses \u003e enter a Preferred or Alternate address of a DNS server you want to use.\u003cbr/\u003eHowever, since there’s no guarantee that the company managing the public service won’t just sell your data (Google, for instance, has its own public DNS), a better option to stop a DNS leak is to use a better VPN, with features that prevent DNS leakage, like NordVPN."},{"id":"faq-question-1613149344968","question":[{"type":"strong","props":{"children":["How to prevent DNS leak?"]}}],"answer":["To prevent a DNS leak, be sure to either use a secure public DNS service, or better yet, a VPN service that includes DNS leak prevention."],"jsonQuestion":"\u003cstrong\u003eHow to prevent DNS leak?\u003c/strong\u003e","jsonAnswer":"To prevent a DNS leak, be sure to either use a secure public DNS service, or better yet, a VPN service that includes DNS leak prevention."}]} -->
+<div class="schema-faq wp-block-yoast-faq-block"><div class="schema-faq-section" id="faq-question-1613149291527"><strong class="schema-faq-question"><strong>What does DNS leak mean?</strong></strong> <p class="schema-faq-answer">A DNS leak means that your request to a VPN server doesn’t get passed through a secure VPN tunnel and an encrypted connection, but instead through the ISP DNS and thus becomes visible to outsiders.</p> </div> <div class="schema-faq-section" id="faq-question-1613149311104"><strong class="schema-faq-question"><strong>How to stop DNS leak?</strong></strong> <p class="schema-faq-answer">To stop a DNS leak that is already happening, switch from default DHCP settings on your Windows to either a public DNS or a static DNS server like OpenDNS, Cloudflare, or Comodo Secure.<br/>You can change these settings by going to: Network and Sharing Center > Change Adapter Settings > right-click on your network > Properties > Internet Protocol Version 4 (TCPIPv4) > Properties > Use the following DNS server addresses > enter a Preferred or Alternate address of a DNS server you want to use.<br/>However, since there’s no guarantee that the company managing the public service won’t just sell your data (Google, for instance, has its own public DNS), a better option to stop a DNS leak is to use a better VPN, with features that prevent DNS leakage, like NordVPN.</p> </div> <div class="schema-faq-section" id="faq-question-1613149344968"><strong class="schema-faq-question"><strong>How to prevent DNS leak?</strong></strong> <p class="schema-faq-answer">To prevent a DNS leak, be sure to either use a secure public DNS service, or better yet, a VPN service that includes DNS leak prevention.</p> </div> </div>
+<!-- /wp:yoast/faq-block -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Conclusion</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>So you want some online privacy?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Not gonna happen while you have a DNS leak!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>DNS leaks are a nightmare to anyone who wants to keep their data secure when using a VPN. Hopefully, this article gave you a good idea of what DNS leak is and how to prevent it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"backgroundColor":"vivid-green-cyan"} -->
+<p class="has-vivid-green-cyan-background-color has-background">Do you also want to make your emails more secure from prying eyes? <a href="https://ctemplar.com/pricing/">Sign up</a> to CTemplar and enjoy unparalleled privacy when emailing.</p>
+<!-- /wp:paragraph -->        </main>        <footer>            <section class="bg-light mt-5 pb-5 pt-5 text-center text-sm-left">                <div class="container">                    <div class="row">                        <div class="col-3 d-md-block d-none text-center">                            <img class="img-fluid" src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo.svg" alt="CTemplar's logo" width="155"/>                        </div>                        <div class="col">                            <h3 class="font-weight-bold">Regain your right to privacy now!</h3>                            <p class="lead">Stand with us in the fight to protect privacy, civil liberties, and the right for anonymity. Create your anonymous encrypted email today.</p>                            <a class="btn btn-danger" href="/pricing/">Pricing</a>                            <a class="btn btn-outline-dark" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                </div>            </section>            <section class="bg-dark pb-3 pt-5 text-light footer">                <div class="container">                    <div class="row text-center">                        <div class="col-12 col-lg-3 col-md-4 col-sm-6 text-sm-left">                            <nav class="flex-column nav">                                <a class="nav-link pl-0 text-light" href="/about/">About</a>                                <a class="nav-link pl-0 text-light" href="/blog/">Blog</a>                                <a class="nav-link pl-0 text-light" href="/donate/">Donate</a>                            <a class="nav-link pl-0 text-light" href="/security/">Security</a>                            </nav>                        </div>                        <div class="col-12 col-lg-3 col-md-4 mt-5 mt-md-0 text-md-left">                                <a class="nav-link pl-0 text-light" href="/features/">Features</a>                                <a class="nav-link pl-0 text-light" href="/help/">Helpdesk</a>                                <a class="nav-link pl-0 text-light" href="/media-kit/">Media Kit</a>                        </div>                        <div class="col-12 col-lg-2 ml-auto mt-4 mt-lg-0 text-lg-left">                            <a class="nav-link pl-0 text-light" href="/privacy/">Privacy Policy</a>                            <a class="nav-link pl-0 text-light" href="/terms/">Terms &amp; Conditions</a>                            <a class="nav-link pl-0 text-light" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                    <h4 class="lead mt-5 text-center">Made with <i class="fa-heart fa-w-16 fas text-danger"></i> for Human Rights</h4>                    <hr>                    <div class="text-center">                        <small>&copy;2022 Templar Software Systems Ltd., a Seychelles Limited Liability Company.</small>                    </div>                </div>            </section>        </footer>        <script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/jquery.slim.min.js' id='ctemplar-jqueryslim-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/popper.min.js' id='ctemplar-popper-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/js/bootstrap.min.js' id='ctemplar-bootstrap-js'></script>        <script>            $(function () {                $('[data-toggle="popover"]').popover()            })        </script>    </body></html>

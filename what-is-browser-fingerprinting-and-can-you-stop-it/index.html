@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="en-US"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><!-- This site is optimized with the Yoast SEO plugin v18.5.1  --><title>What is Browser Fingerprinting and can You Stop it? - CTemplar</title><!-- / Yoast SEO plugin. --><link rel='dns-prefetch' href='//s.w.org' /><link rel='stylesheet' id='wp-block-library-css'  href='https://ctemplar.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' /><link rel="canonical" href="https://liverado.com/what-is-browser-fingerprinting-and-can-you-stop-it/" /><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><link rel='stylesheet' id='ctemplar-bootstrap-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/css/bootstrap.min.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-style-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/style.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-all-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/fontawesome/css/all.min.css' type='text/css' media='all' /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-32x32.png" sizes="32x32" /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-192x192.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-180x180.png" /><meta name="msapplication-TileImage" content="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-270x270.png" />    </head>    <body class="post-template-default single single-post postid-1519 single-format-standard">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <header>            <nav class="bg-primary fixed-top navbar navbar-dark navbar-expand-md">                <div class="container">                    <a class="navbar-brand" href="/"><img src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo-plus-text.svg" alt="CTemplar's logo" height="40"/></a>                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#drop-nav" aria-controls="drop-nav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-icon"></span>                    </button>                    <div class="collapse navbar-collapse" id="drop-nav">                        <ul class="ml-auto navbar-nav">                            <li class="nav-item">                                <a class="nav-link" href="/about/">About</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/blog/">Blog</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/features/">Features</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/help/">Help</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/pricing/">Pricing</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </header>        <main>                                                                    <div class="container my-5" style="max-width: 1024px;">                        <h1 class="mb-5 text-center">What is Browser Fingerprinting and can You Stop it?</h1>                        <!-- wp:paragraph -->
+<p>By now you are probably aware that almost wherever you go on the Internet, someone will try to track you and collect your data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Websites, for instance, use cookies. These are small data packets that the website stores on your device upon your first visit and they hold data that gives the website information about you, including how they might improve your user experience.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, cookies also collect data for statistics, web analytics and marketing purposes.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1198,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-8.png" alt="this website uses cookies" class="wp-image-1198"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Most people are by now wise to cookies and there are different methods to delete or block them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For instance, almost all browsers have an option to&nbsp; block cookies (usually hidden away, but with a little persistence, you will find it).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Taking Safari as an example, you can find this by going to Safari &gt; Preferences &gt; Privacy &gt; Block all cookies.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1199,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-9.png" alt="Privacy" class="wp-image-1199"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Easy-peasy. This will stop them from tracking you and collecting your data, right?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Well, no. There is another method that is even more invasive and is able to collect more data from you.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It is called browser fingerprinting.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What is Browser Fingerprinting?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>So what is browser fingerprinting?&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Browser fingerprinting is a way to match a browser activity to an individual device.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Each time you use a laptop or smartphone to connect to the Internet, the receiving server will collect a great amount of data about what websites you visit from your laptop or smartphone.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Think about it as fingerprints that the police use to identify suspects. If your fingerprints are found at a crime scene and they are in the police database (you probably gave it to them when you were getting your ID or driver’s license), they’ll know exactly who you are and likely where to find you.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But how accurate is browser fingerprinting? We know from almost 170 years of forensic experience (the first fingerprint was used in 1858 by Sir William Herschel, an English administrator in India), that now two people (not even identical twins) can share the same fingerprint.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>How does browser fingerprinting compare to that?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It’s probably not as unique, but according to the <a href="https://coveryourtracks.eff.org/static/browser-uniqueness.pdf" target="_blank" rel="noreferrer noopener nofollow">Electronic Frontier Foundation (EFF)</a>, only 1 in 286,777 browsers share the same fingerprint as another user.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This might not be as unique as 1 in 7.8 billion, but it’s still pretty unique.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>How is it Collected?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Here’s a good question. How is browser fingerprinting collected?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This can be done in one of four ways:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><strong>Through user agents and accept headers.</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>These are sent to websites automatically whenever a connection is initiated.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":2} -->
+<ol start="2"><li><strong>With the HTML5 &lt;canvas&gt; element</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:image {"align":"right","id":1200,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-10.png" alt="HTML 5" class="wp-image-1200"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>The original purpose of the HTML &lt;canvas&gt; was to draw graphics on a webpage. However, this element also generates the browser’s background color settings, font size and some other data on a website, which can be used to create a unique digital fingerprint.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":3} -->
+<ol start="3"><li><strong>Via JavaScript</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The JavaScript provides access to many browser features, including:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>Your screen resolution</li><li>Color depth</li><li>OS platform</li><li>Timezone</li><li>Do you have cookies enabled</li><li>What plugins do you have installed</li><li>Use of local and session storage</li><li>Do you use an ad blocker</li><li>And more</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list {"ordered":true,"start":4} -->
+<ol start="4"><li><strong>Through Adobe Flash</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>If you have the Adobe Flash plugin installed on your computer, its API will provide access to things like:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>What operating system (OS) do you use</li><li>Your timezone</li><li>Screen resolution</li><li>Fonts you are using</li><li>Etc.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2>Why is Browser Fingerprinting Used?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>So why is browser fingerprinting used and is it always bad?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Websites and advertisers want to collect as much data about their visitors as possible. The more that data is unique to a specific visitor, the easier it is for advertisers to create a unique profile of them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This means that they can target the user with their adverts even better and, consequently, increase their revenue.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>By and large, both browser vendors and the standard bodies responsible for online data protection, agree that online tracking methods, like browser fingerprinting, are <a href="https://wiki.mozilla.org/Security/Anti_tracking_policy#Policy_circumvention" target="_blank" rel="noreferrer noopener nofollow">“<em>potentially harmful to users and cannot be meaningfully understood or controlled by users”</em></a><em>.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, in some instances, browser fingerprinting is actually a good thing.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It can, for example, help banks identify whether an account has been accessed from a different location or a different device in a short time span and thus identify a potential fraudster.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another way that browser fingerprinting can actually be useful is in identifying online bots and their characteristics since botnet connections always use a different device to establish themselves.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Using this, one can spot suspicious online behavior and potential fraud.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>How to Test Your Browser Fingerprinting?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Can you see what your digital fingerprint looks like? You can and there are several tools that can test your browser fingerprint.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We’ll name the two biggest test tools here, show you how to use them and at the end, compare their results.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><a href="https://amiunique.org" target="_blank" rel="noreferrer noopener nofollow">Am I Unique?</a>&nbsp;</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Am I Unique collects the following 19 data attributes to create a unique browser fingerprint:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>the User agent header</li><li>the Accept header</li><li>the Connection header</li><li>the Encoding header</li><li>the Language header</li><li>the Upgrade Insecure Requests header</li><li>the Referer header</li><li>the Cache-Control header</li><li>the BuildId of the browser</li><li>the list of plugins</li><li>the platform</li><li>the cookies preferences (allowed or not)</li><li>the Do Not Track preferences (yes, no or not communicated)</li><li>the time zone</li><li>the screen resolution and its color depth</li><li>the use of local storage</li><li>the use of session storage</li><li>a picture rendered with the HTML Canvas element</li><li>a picture rendered with WebGL</li><li>Supported Audio formats</li><li>Supported Video formats</li><li>the presence of AdBlock</li><li>the list of fonts</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>To check your browser fingerprint with Am I Unique, simply go to their website and on the main page click the “View my browser fingerprint” button. Keep in mind that this will put a cookie on your browser for the next four months.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For example, here are my results:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1201,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-11-1024x160.png" alt="Browser fingerprint" class="wp-image-1201"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>I am unique among 3.258,390 fingerprints (all time) and 105,029 (30 days).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":2} -->
+<ol start="2"><li><a href="https://coveryourtracks.eff.org" target="_blank" rel="noreferrer noopener nofollow">Cover Your Tracks</a></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Cover Your Tracks (formerly Panopticlick) is a research project by the EFF that shows how trackers view your browser. It can test if your browser:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>Blocks trackers (both “whitelisted” and invisible ones)</li><li>Blocks tracking ads</li><li>Unblocks “Do Not Track” websites</li><li>Is your browser protected against browser fingerprinting</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>To check this, go to the Cover Your Tracks page and click the “Test Your Browser” button.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>My results are as follows:&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1202,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-12.png" alt="web tracking protection test " class="wp-image-1202"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>According to the tool, my browser fingerprint is unique among 286,298 tested in the past 45 days.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As you can see, both “Am I Unique” and “Cover Your Tracks” show pretty consistent results, with maybe some disparities here and there, but that is mainly due to the techniques and databases they are using for browser fingerprinting.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Can You Stop Fingerprinting?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Reading all of this, you are probably wondering “can I stop or prevent browser fingerprinting?”</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Unfortunately, according to a paper by Jiexin Zhang and Alastair R. Beresford from the University of Cambridge (<a href="https://www.ieee-security.org/TC/SP2019/papers/405.pdf" target="_blank" rel="noreferrer noopener nofollow">SensorID: Sensor Calibration Fingerprinting for Smartphones</a>), some forms of browser fingerprinting cannot be completely stopped.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What you can, however, do is mitigate it and reduce how much digital fingerprint you leave behind.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Here are several methods you do to accomplish that:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><strong>Browse Incognito</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:image {"align":"center","id":1203,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-13.png" alt="Incognito" class="wp-image-1203"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Popular browsers, including Google Chrome, Apple’s Safari and Mozilla’s Firefox all offer the ability to browse in incognito or private mode.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>How does going “incognito” reduce your digital fingerprint?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is done by setting the user’s “profile” to certain general data points, which should make your browsing fingerprint more similar to other profiles and reduce its uniqueness.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, you shouldn’t rely on incognito mode to provide privacy as your information is still visible to your Internet service provider (ISP) and the websites you visit. In addition, Google has been caught tracking user data even in incognito mode.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":2} -->
+<ol start="2"><li><strong>Disable JavaScript and Adobe Flash</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Both JavaScript and Flash provide a plethora of information for trackers about you. Here is a table from a 2019 dissertation, titled “<a href="https://ukdiss.com/examples/web-browser-fingerprinting-attack-privacy.php" target="_blank" rel="noreferrer noopener nofollow">Web Browser Fingerprinting: Attack on Privacy</a>”:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1204,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-14.png" alt="web fingerprint attacks" class="wp-image-1204"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>You can see in the table that JavaScript and Flash provide the most values for analysis, especially regarding plugins (47,057 distinct values, JavaScript) and fonts (36,020 distinct values, Flash).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Fortunately, you can disable Adobe Flash without much repercussion as it is mainly used by some old websites. In fact, with HTML5 and WebGL, Flash is pretty much dead and is no longer supported by Adobe since December, 2020 and the same goes for all major web browsers as well.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Disabling JavaScript can be a little trickier than this, however, mainly since it may cause some websites to break (not run properly), but this way, they won’t be able to install cookies on your browser or see fonts or plugins you use.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":3} -->
+<ol start="3"><li><strong>Install Anti-Fingerprinting and Anti-Tracking Plugins</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:image {"align":"center","id":1205,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-15.png" alt="EFF" class="wp-image-1205"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Now here’s a tricky one.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>On one hand, using a plugin, or extension, or add-on (so many different words used for pretty much the same thing) will make your digital fingerprint more unique. On the other, certain plugins can help you reduce your fingerprint.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For instance, you can try <a href="https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp" target="_blank" rel="noreferrer noopener nofollow">Privacy Badger</a> by EFF, <a href="https://chrome.google.com/webstore/detail/canvas-blocker-fingerprin/nomnklagbgmgghhjidfhnoelnjfndfpd" target="_blank" rel="noreferrer noopener nofollow">Canvas Blocker</a> by Fingerprint Project (both available as Chrome plugins), or <a href="https://noscript.net" target="_blank" rel="noreferrer noopener nofollow">NoScript</a> for Firefox (also endorsed by Edward Snowden as an anti-state surveillance countermeasure).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Keep in mind that using a canvas fingerprinting blocker may actually make your fingerprint more unique.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":4} -->
+<ol start="4"><li><strong>Use a VPN</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>A Virtual Private Network, or VPN, won’t protect you against browser fingerprinting per se. Instead, what it will do is hide your real IP address and location from your ISP and make it more difficult for the ISP to keep an eye on your online activities (in some countries this is even mandatory by law).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As such, you should combine VPN with browser fingerprinting protection techniques.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":5} -->
+<ol start="5"><li><strong>Use Tor Browser</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><a href="https://ctemplar.com/is-tor-safe-and-completely-anonymous-to-use/">Tor browser is created for anonymity</a> and already has many anti-tracking tools by default. This includes:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>Anti-tracking features</li><li>HTTPS Everywhere</li><li>NoScript</li><li>Blocking webGL</li><li>System cloaking</li><li>Canvas image extraction block</li><li>Timezone preferences block</li><li>Language preferences block</li><li>Etc.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>However, it’s best not to use any extensions or plugins on Tor as, according to Tor Project:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em>“Plugins or addons may bypass Tor or compromise your privacy.”</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"start":6} -->
+<ol start="6"><li><strong>Use a Popular Browser</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Now, this may sound counterintuitive to the whole <a href="https://ctemplar.com/best-way-to-secure-your-online-privacy/">Internet privacy</a> and anonymity idea, but hear me out.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The whole idea of browser fingerprinting is to find how unique the user is. Using a web browser like Chrome, for instance, is like hiding in a mass of other people that all look very much alike.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Of course, you still need to keep in mind that <a href="https://ctemplar.com/how-much-does-google-know-about-you-more-than-anyone/">Google itself will collect data</a> from you more than likely.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>With that in mind, your better option, if you are going to use a popular web browser is Firefox and you can read why in our <a href="https://ctemplar.com/choosing-the-best-privacy-browser-for-2021/">Choosing the Best Privacy Browser for 2021</a> article.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:yoast/faq-block {"questions":[{"id":"faq-question-1615439953570","question":[{"type":"strong","props":{"children":["How to stop browser fingerprinting?"]}}],"answer":["You cannot entirely stop browser fingerprinting, but you can mitigate it using a privacy-focused browser like Firefox or Tor, installing certain plugins and by using some other anti-tracking and fingerprinting techniques."],"jsonQuestion":"\u003cstrong\u003eHow to stop browser fingerprinting?\u003c/strong\u003e","jsonAnswer":"You cannot entirely stop browser fingerprinting, but you can mitigate it using a privacy-focused browser like Firefox or Tor, installing certain plugins and by using some other anti-tracking and fingerprinting techniques."},{"id":"faq-question-1615439974190","question":[{"type":"strong","props":{"children":["Can browser fingerprinting identify me personally?"]}}],"answer":["Luckily, browser fingerprinting is not as accurate as regular fingerprinting that the police use. This (browser fingerprinting) will not show you as 100% unique, but will, depending on different factors (your OS, web browser, plugins, etc.) show you as unique among a certain number of other users.",{"type":"br","props":{"children":[]}},"This is probably not enough to identify you personally, but it is enough for advertisers for instance to make a profile of you."],"jsonQuestion":"\u003cstrong\u003eCan browser fingerprinting identify me personally?\u003c/strong\u003e","jsonAnswer":"Luckily, browser fingerprinting is not as accurate as regular fingerprinting that the police use. This (browser fingerprinting) will not show you as 100% unique, but will, depending on different factors (your OS, web browser, plugins, etc.) show you as unique among a certain number of other users.\u003cbr/\u003eThis is probably not enough to identify you personally, but it is enough for advertisers for instance to make a profile of you."}]} -->
+<div class="schema-faq wp-block-yoast-faq-block"><div class="schema-faq-section" id="faq-question-1615439953570"><strong class="schema-faq-question"><strong>How to stop browser fingerprinting?</strong></strong> <p class="schema-faq-answer">You cannot entirely stop browser fingerprinting, but you can mitigate it using a privacy-focused browser like Firefox or Tor, installing certain plugins and by using some other anti-tracking and fingerprinting techniques.</p> </div> <div class="schema-faq-section" id="faq-question-1615439974190"><strong class="schema-faq-question"><strong>Can browser fingerprinting identify me personally?</strong></strong> <p class="schema-faq-answer">Luckily, browser fingerprinting is not as accurate as regular fingerprinting that the police use. This (browser fingerprinting) will not show you as 100% unique, but will, depending on different factors (your OS, web browser, plugins, etc.) show you as unique among a certain number of other users.<br/>This is probably not enough to identify you personally, but it is enough for advertisers for instance to make a profile of you.</p> </div> </div>
+<!-- /wp:yoast/faq-block -->
+
+<!-- wp:heading -->
+<h2>Conclusion</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We all want to be unique and different, but sometimes that can cause more problems than is worth.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Browser fingerprinting is one of such problems as it can help create a unique profile of you that will help marketers collect data and create a unique profile of you.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is why you should be aware of it and know how you can stop fingerprinting (or at the very least reduce it).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Hopefully, this article has helped you learn more about what browser fingerprinting is and how you can deal with it.</p>
+<!-- /wp:paragraph -->        </main>        <footer>            <section class="bg-light mt-5 pb-5 pt-5 text-center text-sm-left">                <div class="container">                    <div class="row">                        <div class="col-3 d-md-block d-none text-center">                            <img class="img-fluid" src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo.svg" alt="CTemplar's logo" width="155"/>                        </div>                        <div class="col">                            <h3 class="font-weight-bold">Regain your right to privacy now!</h3>                            <p class="lead">Stand with us in the fight to protect privacy, civil liberties, and the right for anonymity. Create your anonymous encrypted email today.</p>                            <a class="btn btn-danger" href="/pricing/">Pricing</a>                            <a class="btn btn-outline-dark" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                </div>            </section>            <section class="bg-dark pb-3 pt-5 text-light footer">                <div class="container">                    <div class="row text-center">                        <div class="col-12 col-lg-3 col-md-4 col-sm-6 text-sm-left">                            <nav class="flex-column nav">                                <a class="nav-link pl-0 text-light" href="/about/">About</a>                                <a class="nav-link pl-0 text-light" href="/blog/">Blog</a>                                <a class="nav-link pl-0 text-light" href="/donate/">Donate</a>                            <a class="nav-link pl-0 text-light" href="/security/">Security</a>                            </nav>                        </div>                        <div class="col-12 col-lg-3 col-md-4 mt-5 mt-md-0 text-md-left">                                <a class="nav-link pl-0 text-light" href="/features/">Features</a>                                <a class="nav-link pl-0 text-light" href="/help/">Helpdesk</a>                                <a class="nav-link pl-0 text-light" href="/media-kit/">Media Kit</a>                        </div>                        <div class="col-12 col-lg-2 ml-auto mt-4 mt-lg-0 text-lg-left">                            <a class="nav-link pl-0 text-light" href="/privacy/">Privacy Policy</a>                            <a class="nav-link pl-0 text-light" href="/terms/">Terms &amp; Conditions</a>                            <a class="nav-link pl-0 text-light" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                    <h4 class="lead mt-5 text-center">Made with <i class="fa-heart fa-w-16 fas text-danger"></i> for Human Rights</h4>                    <hr>                    <div class="text-center">                        <small>&copy;2022 Templar Software Systems Ltd., a Seychelles Limited Liability Company.</small>                    </div>                </div>            </section>        </footer>        <script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/jquery.slim.min.js' id='ctemplar-jqueryslim-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/popper.min.js' id='ctemplar-popper-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/js/bootstrap.min.js' id='ctemplar-bootstrap-js'></script>        <script>            $(function () {                $('[data-toggle="popover"]').popover()            })        </script>    </body></html>
