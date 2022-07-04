@@ -1,0 +1,137 @@
+/* Theme Name: CTemplar
+Theme URI: https://ctemplar.com
+Author: Albert Hofmann
+Author URI: https://github.com/the-hidden-hand
+Description: None yet.
+Version: 3.0-alpha
+License: Confidential
+License URI: -
+Text Domain: ctemplar */
+body {
+    padding-top: 66px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.bg-primary {
+    background-color: rgb(40, 62, 82) !important;
+}
+
+.bg-danger {
+    background-color: #ea3c36 !important;
+}
+
+.bg-dark {
+    background-color: rgb(33, 33, 33) !important;
+}
+
+.btn-outline-dark {
+    color: rgb(33, 33, 33) !important;
+    border-color: rgb(33, 33, 33) !important;
+}
+
+.btn-outline-dark:hover {
+    color: #fff !important;
+    border-color: rgb(33, 33, 33) !important;
+    background: rgb(33, 33, 33) !important;
+}
+
+.btn-danger {
+    background-color: #ea3c36 !important;
+}
+
+.btn-danger:hover {
+    background-color: red !important;
+    border-color: red !important;
+}
+
+.text-danger {
+    color: #ea3c36 !important;
+}
+
+.btn-outline-danger {
+    color: #ea3c36 !important;
+    border-color: #ea3c36 !important;
+}
+
+.btn-outline-danger:hover {
+    color: #fff !important;
+    border-color: #ea3c36 !important;
+    background: #ea3c36 !important;
+}
+
+a {
+    color: #212529;
+}
+
+a:hover {
+    color: rgb(40, 62, 82);
+}
+
+.welcome-banner {
+    background-image: url('assets/img/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    min-height: 600px;
+    text-align: center;
+}
+
+@media (min-width:1200px) {
+    .welcome-banner {
+        min-height: 800px;
+    }
+}
+
+@media (min-width:576px) and (max-width:991px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+.pagination > li > a {
+    background-color: white;
+    color: #212529;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a {
+    color: white;
+    background-color: rgb(40, 62, 82) !important;
+    border: solid 1px rgb(40, 62, 82) !important;
+}
+
+.pagination > .active > a:hover {
+    background-color: #ea3c36 !important;
+    border: solid 1px #ea3c36 !important;
+}
+
+.fdb-box {
+    border: 1px solid #343a40;
+}
+
+.faq a {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.card-columns {
+    @include media-breakpoint-only(lg) {
+        column-count: 4;
+    }
+
+    @include media-breakpoint-only(xl) {
+        column-count: 4;
+    }
+}
+}
