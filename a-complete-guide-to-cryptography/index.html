@@ -1,0 +1,443 @@
+<!DOCTYPE html><html lang="en-US"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><!-- This site is optimized with the Yoast SEO plugin v18.5.1  --><title>A Complete Guide to Cryptography - CTemplar</title><!-- / Yoast SEO plugin. --><link rel='dns-prefetch' href='//s.w.org' /><link rel='stylesheet' id='wp-block-library-css'  href='https://ctemplar.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' /><link rel="canonical" href="https://liverado.com/a-complete-guide-to-cryptography/" /><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><link rel='stylesheet' id='ctemplar-bootstrap-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/css/bootstrap.min.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-style-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/style.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-all-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/fontawesome/css/all.min.css' type='text/css' media='all' /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-32x32.png" sizes="32x32" /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-192x192.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-180x180.png" /><meta name="msapplication-TileImage" content="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-270x270.png" />    </head>    <body class="post-template-default single single-post postid-1519 single-format-standard">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <header>            <nav class="bg-primary fixed-top navbar navbar-dark navbar-expand-md">                <div class="container">                    <a class="navbar-brand" href="/"><img src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo-plus-text.svg" alt="CTemplar's logo" height="40"/></a>                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#drop-nav" aria-controls="drop-nav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-icon"></span>                    </button>                    <div class="collapse navbar-collapse" id="drop-nav">                        <ul class="ml-auto navbar-nav">                            <li class="nav-item">                                <a class="nav-link" href="/about/">About</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/blog/">Blog</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/features/">Features</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/help/">Help</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/pricing/">Pricing</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </header>        <main>                                                                    <div class="container my-5" style="max-width: 1024px;">                        <h1 class="mb-5 text-center">A Complete Guide to Cryptography</h1>                        <!-- wp:paragraph -->
+<p>Let’s say you need to send a secret message to someone and don’t want that message to get into the wrong hands. How can you keep your information and communication secure?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>By using cryptography.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What is cryptography?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you hear the word “cryptography”, you’re probably thinking of making regular, or plaintext unreadable without using a special key.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This, however, is just one part (although an important one) of cryptography, called encryption. While cryptography and encryption were all but synonymous, today cryptography is much more than encrypting and decrypting messages.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It also includes:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Authentication</strong></li><li><strong>Non-repudiation</strong></li><li><strong>Integrity</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Authentication ensures that you are sending the message or data to the right person and not someone eavesdropping. This is accomplished with the help of certificates and digital signatures.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Non-repudiation makes sure that the sender can’t deny that they sent something.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Integrity ensures that the data hasn’t been changed after it was sent and before it reached the recipient by a third-party.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Knowing all of this, we can define cryptography as <em>“the study and practice of communication techniques and their protection against third-party adversaries</em>”.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>History of Cryptography</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Okay, let’s talk a little about the history of cryptography.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The word “cryptography” comes from two Ancient Greek words, “crypto”, meaning “hidden”, or “secret” and “graphein”, meaning “to write”.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The practice of making secret messages is as old as human civilization and cryptography can be traced back to the ancient world.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We get the first mention of a cipher tool from a Greek poet Archilochus around 680 - 645 BC, called <strong>Scytale, </strong>and around 700 years later, Plutarch gives a description of it in “<a href="http://classics.mit.edu/Plutarch/lysander.html" target="_blank" rel="noreferrer noopener nofollow">Lysander</a>” </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One such is the <strong>Caesar Cipher</strong> named by Julius Caesar, who has supposedly used it himself. This is a substitution&nbsp; cipher, where, for example, the letters are moved several spaces to the right.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For instance, if we move the alphabet three spaces to the right, “Cryptography” becomes “Fubswrjudskb”.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Again, once you know the pattern, it would become quite easy to decipher it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The earliest work on cryptography and cryptanalysis comes from the 9th century Arab Philosopher Abu Yusuf Yaqub ibn Ishaq Al-Kindi and is called “A Manuscript on Deciphering Cryptographic Messages”</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another Arab mathematician and polymath, Ahmad Al-Qalqashandi also mentions cryptology in his “Subh al-Asha” encyclopedia, where he introduces a list of substitution and transposition ciphers, including the first homophonic substitution cipher.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Europe wasn’t far behind in cryptology either, as it was a very popular way of communicating among courts in secret’</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In 1837, Samuel Morse invented the electric telegraph and long-distance message transmission using coded signals, which later became the standard for international communication.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In the 20th century, cryptography saw use in both WW1 (Zimmerman Telegram)&nbsp; and WW2 (Enigma Machine) and in both cases, cracking it proved invaluable for the Entente and the Allies to win the respective wars.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As you can see, cryptography was throughout history mainly used for military purposes, but over time, it has found its way into business and even personal communication, largely thanks to the Internet.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For instance, Phil Zimmerman released the <a href="https://ctemplar.com/what-is-pgp-encryption-everything-you-need-to-know-about-pretty-good-privacy/">PGP</a> (Pretty Good Privacy) in 1991, along with the source code, which later led to OpenPGP and Netscape released the Secure Sockets Layer (SSL) protocol in 1994.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Cryptography Types</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Okay, enough about the history of cryptography. Let’s talk a bit about the cryptography types.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In general, there are three types of cryptography:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><strong>Symmetric Cryptography</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Symmetric cryptography uses one key to encrypt and decrypt when sending and receiving data. This makes it faster, but the downside lies in the insecure exchange of the key.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Symmetric cryptography is also known as “secret key” or “private key cryptography”.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It includes:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>AES</li><li>DES</li><li>RC2</li><li>Blowfish</li><li>IDEA</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list {"ordered":true,"start":2} -->
+<ol start="2"><li><strong>Asymmetric Cryptography</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>With asymmetric cryptography, two keys are used to encrypt and decrypt the message. First, the public-key encrypts the message and then the private key decrypts it. Only the recipient has the private key.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This cryptography type is also known as “public-key cryptography”.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Asymmetric cryptography includes:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>RSA cryptography</li><li>Elliptic Curve Cryptography</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list {"ordered":true,"start":3} -->
+<ol start="3"><li><strong>Hash Function Cryptography</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>No keys are used in hash functions. Instead, a unique hash value is calculated for plain text and without it, the original text can’t be recovered.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Hash functions include:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>SHA (Secure Hash Algorithm)</li><li>MD5 (Message Digest 5)</li><li>Whirlpool</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>You can read more about symmetric vs asymmetric encryption in <a href="https://ctemplar.com/what-are-the-most-common-encryption-methods-and-their-algorithms/">this article</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Cryptography Techniques</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There are several cryptography techniques used today (and thorough history). We’ll briefly name a few of them:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Simple Codes</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>This is basically writing the message in another script. For instance, in WW2, the Allies used the Navajo language as code, which the Germans were unable to crack.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another way would be to, for example, write the message in Nordic runes:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1237,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-22.png" alt=" Nordic runes" class="wp-image-1237"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:list -->
+<ul><li><strong>Substitution ciphers</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>In this case, each letter is replaced by another, for example, 3 steps removed from it. To decode the message, one would just need to reverse the process.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We already explained how Caesar Cipher works, so we’re not going to get into that again.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another type of this is the Morse code, which uses beeps of varying lengths instead of letters.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Stenography</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Stenography is based on hiding messages (either using something like invisible ink, or placing it in an unexpected place.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If the message can’t be found in the first place, the logic is, it can’t be cracked.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One great example of this is <a href="https://en.wikipedia.org/wiki/Cicada_3301#Types_of_clues">Cicada 3301</a>. This was a puzzle circulating the Internet forums like 4chan since 2012, for the stated purpose of “recruiting highly intelligent individuals”, though by whom is still unknown.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Different base</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The number system that we use every day is base 10 (1-10), but there are also binary (base 2), hexadecimal (base 16) and so on.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For example, if we use 100 (base 10), in binary, this would be 1100100 and in hex, it’s 64.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1236,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/03/image-21.png" alt="base numbers" class="wp-image-1236"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2>Cryptography Algorithms</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Cryptography algorithms can be divided into symmetric key and asymmetric key algorithms.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You can also check our “<a href="https://ctemplar.com/what-is-the-best-encryption-algorithm/">What is the Best Encryption Algorithm</a> article.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Symmetric Key Algorithms</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Symmetric key algorithms include:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Advanced Encryption Standard,</strong> <strong>(AES)</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>AES uses the Substitution Permutation Network (SPN) to apply multiple rounds and encrypt data. This encryption uses 128-bit, 192-bit and 256-bit keys and 128-bit blocks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Data Encryption Standard (DES)</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>DES is no longer in use today. This is because its 56-bit key can be cracked easily with modern computers (in about 362 seconds).&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A variation of DES, 3-DES, or “triple DES” is still used in electronic payment systems.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>International Data Encryption Algorithm (IDEA)</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>IDEA is a free-to-use algorithm that uses 128-bit keys and 64-bit blocks, under OpenPGP standard. Today it’s not widely used, but has some applications as it is patent-free.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>RC-2</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>RC-2 was developed by Ron Rivest in 1987 and used 64-block ciphers with variable key length in 18 rounds in an unbalanced Feistel network. Not in use anymore since it is susceptible to related-key attacks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>RC-4</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>RC-4 was a successor of RC-2 also developed by Ron Rivest posted on a sci-crypt newsgroup in 1994 and was quickly cracked. It was never officially released by RSA security. It’s not in use today.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>RC-5</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>RC-5 uses 0-2949-bit keys, 0-255 rounds and block sizes of 32, 64 and 128-bit block sizes.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>RC-6</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>RC-6 was one of the five finalists of the Advanced Encryption Standard competition, which was won by “Rijndael”, today known as AES. RC-6 uses data-dependent rotations, XOR operations and modular addition and it supports 128, 192 and 256-bit keys, with 128-bit block sizes.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Blowfish</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Blowfish was designed by Bruce Schneier to replace DES and IDEA. It uses 64-bit block sizes, with 32 to 448-bit keys and takes 16 rounds. It’s not in use because of its vulnerability to birthday attacks, plaintext attacks and Sweet32 attacks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Twofish</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Twofish replaced Blowfish in 1998 and uses 128-bit blocks, 256-bit keys and 16 rounds. It was one of the five Advanced Encryption Standard competition finalists, but didn’t “make the cut” because it lacked standardization.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Threefish</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>As Twofish was cracked in 1999 (see the paper <a href="https://www.isg.rhul.ac.uk/~sean/tfkeys.pdf" target="_blank" rel="noreferrer noopener nofollow">An Observation of the Key Schedule</a> of Twofish by Fauzan Mirza and Sean Murphy for more detail), Schneier introduced Threefish in 2008. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Threefish uses 256, 512 and 1024-bit blocks, with corresponding key sizes and up to 80 rounds.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A published attack from October 2010 was able to break 53 of 72 rounds in 256-bit and 57 of 72 rounds in 512-bit versions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Serpent</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Serpent algorithm narrowly lost the Advanced Encryption Standard competition to Rijndael (now AES) and is still in use today.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This algorithm, developed by Ros Anderson, Eli Buham and Lars Knudsen uses 128-bit blocks and 128. 192 and 256-bit keys and 32 rounds.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Several published attacks were able to break the first 12 of 32 rounds, but couldn’t get further and the amount of time and energy it took them suggests that this is still a safe algorithm to use,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Asymmetric Key Algorithms</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Asymmetric, or public-key cryptography algorithms, include:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Rivest-Shammir-Adleman (RSA)</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>RSA cryptography is today the most widely used public-key algorithm, but because it is slow it is primarily used to encrypt/decrypt the symmetric key, which is then used to encrypt/decrypt the data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>RSA is based on “prime number factorization”.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Elliptic Curve Cryptography (ECC)</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>ECC uses elliptic curves over finite fields.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Compared to RSA, ECC uses smaller key sizes and offers the same cryptographic strength, making it less taxing on the system.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It is still in use today and NIST has recommended 15 elliptic curves as a standard.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Diffie-Hellman</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Finally, Diffie-Hellman by Whitfield Diffie and Martin Hellman (using a concept by Ralph Merkle) was the very first example of asymmetric cryptography.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Diffie-Hellman is vulnerable to several types of attacks, so it’s no longer a standard, but it is still used in digital signing and PKI.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>How many keys are used in symmetric cryptography?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Symmetric cryptography is done with the same key for both encrypting and decrypting data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Conclusion</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Since ancient times, man has looked for ways to hide messages he wanted to send to others. Today, as our communication has moved to the Internet, the importance of cryptography is even greater as you can never know who wants to read your message.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>CTemplar uses 4096-bit RSA encryption to encrypt your email messages, subjects and attachments. <a href="https://ctemplar.com/pricing/">Sign up to CTemplar</a> to bring your privacy to a new level.</p>
+<!-- /wp:paragraph -->        </main>        <footer>            <section class="bg-light mt-5 pb-5 pt-5 text-center text-sm-left">                <div class="container">                    <div class="row">                        <div class="col-3 d-md-block d-none text-center">                            <img class="img-fluid" src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo.svg" alt="CTemplar's logo" width="155"/>                        </div>                        <div class="col">                            <h3 class="font-weight-bold">Regain your right to privacy now!</h3>                            <p class="lead">Stand with us in the fight to protect privacy, civil liberties, and the right for anonymity. Create your anonymous encrypted email today.</p>                            <a class="btn btn-danger" href="/pricing/">Pricing</a>                            <a class="btn btn-outline-dark" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                </div>            </section>            <section class="bg-dark pb-3 pt-5 text-light footer">                <div class="container">                    <div class="row text-center">                        <div class="col-12 col-lg-3 col-md-4 col-sm-6 text-sm-left">                            <nav class="flex-column nav">                                <a class="nav-link pl-0 text-light" href="/about/">About</a>                                <a class="nav-link pl-0 text-light" href="/blog/">Blog</a>                                <a class="nav-link pl-0 text-light" href="/donate/">Donate</a>                            <a class="nav-link pl-0 text-light" href="/security/">Security</a>                            </nav>                        </div>                        <div class="col-12 col-lg-3 col-md-4 mt-5 mt-md-0 text-md-left">                                <a class="nav-link pl-0 text-light" href="/features/">Features</a>                                <a class="nav-link pl-0 text-light" href="/help/">Helpdesk</a>                                <a class="nav-link pl-0 text-light" href="/media-kit/">Media Kit</a>                        </div>                        <div class="col-12 col-lg-2 ml-auto mt-4 mt-lg-0 text-lg-left">                            <a class="nav-link pl-0 text-light" href="/privacy/">Privacy Policy</a>                            <a class="nav-link pl-0 text-light" href="/terms/">Terms &amp; Conditions</a>                            <a class="nav-link pl-0 text-light" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                    <h4 class="lead mt-5 text-center">Made with <i class="fa-heart fa-w-16 fas text-danger"></i> for Human Rights</h4>                    <hr>                    <div class="text-center">                        <small>&copy;2022 Templar Software Systems Ltd., a Seychelles Limited Liability Company.</small>                    </div>                </div>            </section>        </footer>        <script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/jquery.slim.min.js' id='ctemplar-jqueryslim-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/popper.min.js' id='ctemplar-popper-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/js/bootstrap.min.js' id='ctemplar-bootstrap-js'></script>        <script>            $(function () {                $('[data-toggle="popover"]').popover()            })        </script>    </body></html>

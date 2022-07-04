@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en-US"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><!-- This site is optimized with the Yoast SEO plugin v18.5.1  --><title>How Offline GPG Decryption Software Works? - CTemplar</title><!-- / Yoast SEO plugin. --><link rel='dns-prefetch' href='//s.w.org' /><link rel='stylesheet' id='wp-block-library-css'  href='https://ctemplar.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' /><link rel="canonical" href="https://liverado.com/how-offline-gpg-decryption-software-works/" /><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><link rel='stylesheet' id='ctemplar-bootstrap-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/css/bootstrap.min.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-style-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/style.css' type='text/css' media='all' /><link rel='stylesheet' id='ctemplar-all-css'  href='https://ctemplar.com/wp-content/themes/ctemplar/fontawesome/css/all.min.css' type='text/css' media='all' /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-32x32.png" sizes="32x32" /><link rel="icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-192x192.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-180x180.png" /><meta name="msapplication-TileImage" content="https://ctemplar.com/wp-content/uploads/2020/07/cropped-logo-270x270.png" />    </head>    <body class="post-template-default single single-post postid-1519 single-format-standard">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <header>            <nav class="bg-primary fixed-top navbar navbar-dark navbar-expand-md">                <div class="container">                    <a class="navbar-brand" href="/"><img src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo-plus-text.svg" alt="CTemplar's logo" height="40"/></a>                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#drop-nav" aria-controls="drop-nav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-icon"></span>                    </button>                    <div class="collapse navbar-collapse" id="drop-nav">                        <ul class="ml-auto navbar-nav">                            <li class="nav-item">                                <a class="nav-link" href="/about/">About</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/blog/">Blog</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/features/">Features</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/help/">Help</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="/pricing/">Pricing</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </header>        <main>                                                                    <div class="container my-5" style="max-width: 1024px;">                        <h1 class="mb-5 text-center">How Offline GPG Decryption Software Works?</h1>                        <!-- wp:paragraph -->
+<p>Whether you have an online business or are looking to secure your own privacy, encryption software is at the forefront and a must-have for protecting your confidential information.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In this article, we'll discuss encryption/decryption software, the difference between PGP and GPG, as well as some offline GPG decryption software tools and why you might need them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Difference Between PGP and GPG Encryption</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>First, if you are new to encryption/decryption, you probably heard the terms "PGP", "OpenPGP", "GPG" and "GnuPG".</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What do these mean and what is the difference between them?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let's start with the most well-known - PGP.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>PGP or Pretty Good Privacy is a proprietary data encryption software owned by Symantec. It's used in email encryption, but also for encrypting directories and disk partitions, as well as encrypting files when exchanging them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When it comes to OpenPGP, there is essentially nothing different between PGP and OpenPGP other than the fact that OpenPGP is the open-source version of PGP that is free for public use.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The only "requirement" for using OpenPGP is for the solution to adhere to the IETF (Internet Engineering Task Force) standards and can mix with other OpenPGP-compliant vendors.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What about GPG and GnuPG?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>These two are the same thing and GPG is an alternative to PGP.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>GPG stands for "Gnu Privacy Guard". It is defined by OpenPGP standard and is run by the GPG Project and can decrypt and open files that were encrypted by either PGP or OpenPGP.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What is the difference between PGP and GPG?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Other than the fact that PGP is a proprietary encryption software owned by Symantec and GPG is open-source encryption and decryption software, there is no big difference between these two formats.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>How to Use PGP?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>For this guide on how to use PGP, we'll use GPG4WIN, so the process might be a bit different with other encrypting software we listed here.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Download GPG4WIN</h3>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"center","id":1480,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/07/GPG4WIN-offline-gig-decryption-software.png" alt="GPG4WIN offline gig decryption software" class="wp-image-1480"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>The first thing we want to do is to <a href="https://www.gpg4win.org/get-gpg4win.html" rel="noreferrer noopener nofollow" target="_blank">download GPG4WIN</a>. It's a free software, but you can use PayPal, Bitcoin or bank transfer to donate $10, $15, $25, or a custom amount you want should you wish.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The current working version of GPG4WIN is 3.1.16, but if you already have an older version of the software, you can update that one and your keys will be kept.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Make sure to check all the boxes for the components. GPG4WIN 3.1.16 includes:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>GnuPG 2.2.28</li><li>Kleopatra 3.1.16</li><li>GPA 0.10.0</li><li>GPGOL 2.5.0</li><li>GPGEX 1.0.6</li><li>Kompendium (de) 4.0.1</li><li>Compendium 3.0.0</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>This should all require about 90 MB of space on your drive. Once you're ready to install, just press the <strong>Next </strong>button.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Generate a Key</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Once you do this, a popup window saying will appear with buttons to <strong>Generate key now </strong>and <strong>Do it later. </strong>Press the first button.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1481,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/07/Generate-key-GPG4Win.png" alt="Generate key GPG4Win" class="wp-image-1481"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Once you do, the Key Manager will ask you for your name and Despite it asking for your name, don't give it your real name, please. Instead, go ahead and use a pseudonym. The same goes for your email address.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1482,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/07/Use-a-pseudonym-and-not-your-real-name.png" alt="" class="wp-image-1482"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:image {"align":"center","id":1483,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/07/Also-use-a-fake-email-address.png" alt="Also use a fake email address" class="wp-image-1483"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Last, but not least, you should backup your key. This isn't mandatory, but it's a good practice. Simply click the radio button next to <strong>Create a backup copy </strong>and that's it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This will open a new window where it will ask you to create a passphrase, so be sure it's something you'll remember.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1484,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/07/Create-a-passphrase-GPG4WIN.png" alt="Create a passphrase GPG4WIN" class="wp-image-1484"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Next, you need to choose a location on your computer where you want to keep your backup key. Don't just put it on the desktop in a folder screaming "IMPORTANT!". Instead, bury it deep under 2-3 subfolders.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Click <strong>Save </strong>and enter the passphrase you created.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You'll get a confirmation that the backup key is successfully stored.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1485,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/07/Key-backup-confirmation.png" alt="Key backup confirmation" class="wp-image-1485"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":3} -->
+<h3>How to Send the Public Key?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Sending the public key you just generated is quite easy in fact.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All you need to do is:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li>Open the Key Manager</li><li>Locate the key you want to send (if you have multiple encryption keys)</li><li>Right-click on that key to copy it to your clipboard</li><li>Paste the key and send it in the email to the other person</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>Pay attention to ONLY copy public keys like this and never private keys!</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>How to Import a PGP Key?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>If you need to send someone an encrypted email message, you'll need to import their public key.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Simply ask them to send you the key like we explained above (don't worry, just don't send private keys like this).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Next, copy the key to your notepad and save it somewhere. Once you do, click <strong>Import </strong>on your GPG4WIN Key Manager.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1486,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/07/How-to-import-a-PGP-key.png" alt="How to import a PGP key?" class="wp-image-1486"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Next, just find the location where you saved the key and click <strong>Open.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You'll see a window like this and just click <strong>Close.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"align":"center","id":1487,"sizeSlug":"large","linkDestination":"none"} -->
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://ctemplar.com/wp-content/uploads/2021/07/Key-import-confirmed.png" alt="Key import confirmed" class="wp-image-1487"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2>How to Encrypt and Decrypt Your Email with PGP?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Now that you have your public and private keys, let's see how to encrypt and decrypt a message using GPG4WIN.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>First, the encryption part:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li>Open the <strong>GNU Privacy Assistant File Manager</strong></li><li>A <strong>Clipboard </strong>should automatically open. If it doesn't (for instance, you're on another page, simply click on the <strong>Clipboard </strong>icon at the top.</li><li>In the Clipboard text area type, some text and click the <strong>Encrypt </strong>icon</li><li>Select the public key of the person you want to send the message to</li><li>A popup will appear next on your screen. Select <strong>Yes </strong>and your message will be encrypted</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Now, let's take a look at how to decrypt a PGP-encrypted message:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li>First, open your GNU Privacy Assistant Clipboard and paste the encrypted message into the text area</li><li>Enter the passphrase you setup before and click <strong>OK</strong></li><li>The message should now be decrypted and you can copy/paste it into a notepad somewhere on your computer</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2>What is the Best Encrypting Software You Can Find?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>As encryption becomes more and more a necessity, so too does encryption software.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When it comes to offline GPG decryption software, three tools stand out:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li><strong>GPG4Win</strong></li><li><strong>WinGPG</strong></li><li><strong>PGPTool</strong></li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.gpg4win.org/about.html" target="_blank" rel="noreferrer noopener nofollow">GPG4Win</a> or GNU Privacy Guard for Windows is the official GPG distribution for Windows.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is encryption software for emails and files that allows users to transport files or emails securely using encryption and digital signatures, where digital signature shows that the file or email came from the sender and was not changed and encryption ensures that the data is secure from an unauthorized third-party opening and reading it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://scand.com/products/wingpg/" target="_blank" rel="noreferrer noopener nofollow">WinGPG</a> is a tray-based application for Windows, as well as a GPG v2 distribution that offers data protection, digital signature and verification and encryption and decryption for securing your sensitive data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The third option here is <a href="https://pgptool.github.io/" target="_blank" rel="noreferrer noopener nofollow">PGPTool</a>. What this tool does is makes it easier to encrypt and decrypt data by automatically suggesting parameters (so you don't have to enter them manually). As a result, there's less of a chance to leave sensitive data unencrypted.</p>
+<!-- /wp:paragraph -->        </main>        <footer>            <section class="bg-light mt-5 pb-5 pt-5 text-center text-sm-left">                <div class="container">                    <div class="row">                        <div class="col-3 d-md-block d-none text-center">                            <img class="img-fluid" src="https://ctemplar.com/wp-content/themes/ctemplar/assets/img/logo.svg" alt="CTemplar's logo" width="155"/>                        </div>                        <div class="col">                            <h3 class="font-weight-bold">Regain your right to privacy now!</h3>                            <p class="lead">Stand with us in the fight to protect privacy, civil liberties, and the right for anonymity. Create your anonymous encrypted email today.</p>                            <a class="btn btn-danger" href="/pricing/">Pricing</a>                            <a class="btn btn-outline-dark" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                </div>            </section>            <section class="bg-dark pb-3 pt-5 text-light footer">                <div class="container">                    <div class="row text-center">                        <div class="col-12 col-lg-3 col-md-4 col-sm-6 text-sm-left">                            <nav class="flex-column nav">                                <a class="nav-link pl-0 text-light" href="/about/">About</a>                                <a class="nav-link pl-0 text-light" href="/blog/">Blog</a>                                <a class="nav-link pl-0 text-light" href="/donate/">Donate</a>                            <a class="nav-link pl-0 text-light" href="/security/">Security</a>                            </nav>                        </div>                        <div class="col-12 col-lg-3 col-md-4 mt-5 mt-md-0 text-md-left">                                <a class="nav-link pl-0 text-light" href="/features/">Features</a>                                <a class="nav-link pl-0 text-light" href="/help/">Helpdesk</a>                                <a class="nav-link pl-0 text-light" href="/media-kit/">Media Kit</a>                        </div>                        <div class="col-12 col-lg-2 ml-auto mt-4 mt-lg-0 text-lg-left">                            <a class="nav-link pl-0 text-light" href="/privacy/">Privacy Policy</a>                            <a class="nav-link pl-0 text-light" href="/terms/">Terms &amp; Conditions</a>                            <a class="nav-link pl-0 text-light" href="/tor-browser/">Tor Browser</a>                        </div>                    </div>                    <h4 class="lead mt-5 text-center">Made with <i class="fa-heart fa-w-16 fas text-danger"></i> for Human Rights</h4>                    <hr>                    <div class="text-center">                        <small>&copy;2022 Templar Software Systems Ltd., a Seychelles Limited Liability Company.</small>                    </div>                </div>            </section>        </footer>        <script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/jquery.slim.min.js' id='ctemplar-jqueryslim-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/assets/js/popper.min.js' id='ctemplar-popper-js'></script><script type='text/javascript' src='https://ctemplar.com/wp-content/themes/ctemplar/bootstrap/js/bootstrap.min.js' id='ctemplar-bootstrap-js'></script>        <script>            $(function () {                $('[data-toggle="popover"]').popover()            })        </script>    </body></html>
